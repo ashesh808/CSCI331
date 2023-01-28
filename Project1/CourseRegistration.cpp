@@ -16,7 +16,6 @@
 istream &operator>>(istream &ins, CourseRegistration &target)
 // Library facilities used: iostream
 // Friend of: CourseRegistration class
-// Inputs date in month-day-year format
 {
     ins >> target.courseId_ >> target.studentId_ >> target.creditHours_ >> target.grade_;
     return ins;

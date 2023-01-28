@@ -11,7 +11,7 @@
 
 #include "Student.h"
 
-Student::Student(int identifier = 0, string fname = "x", string lname = "x", string address = "x", Date dateofenrollment = defaultDate, int creditHoursCompleted = 0)
+Student::Student(int identifier, string fname, string lname, string address, Date dateofenrollment, int creditHoursCompleted)
 {
     this->identifier = identifier;
     this->fname = fname;
@@ -21,14 +21,14 @@ Student::Student(int identifier = 0, string fname = "x", string lname = "x", str
     this->creditHoursCompleted = creditHoursCompleted;
 }
 
-friend istream &operator>>(istream &ins, Student &target)
+istream &operator>>(istream &ins, Student &target)
 {
     ins >> target.identifier >> target.fname >> target.lname >> target.address >> target.dateofenrollment >> target.creditHoursCompleted;
     return ins;
 }
 
-friend ostream &operator<<(ostream &outs, const Student &source)
+ostream &operator<<(ostream &outs, const Student &source)
 {
-    outs << source.identifier << " " << source.fname << " " << source.lname << " " << source.address << " " << source.dateofenrollment << " " << source.creditHoursCompleted;
+    outs << source.getIdentifier() << "\n" << source.getFname() << " " << source.getLname() << "\n" << source.getAddress() << "\n" << source.getDateofenrollment() << source.getCreditHoursCompleted() << "\n";
     return outs;
 }

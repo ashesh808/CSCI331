@@ -6,14 +6,13 @@
  * Profressor: Jie Meichsner
  */
 
-#ifndef STUDENT
-#define STUDENT
+#ifndef _STUDENT_H
+#define _STUDENT_H
 
 /** Provides ostream and istream*/
 #include <iostream>
 #include "Date.h"
 
-Date defaultDate(0, 0, 0);
 class Student
 {
 public:
@@ -26,7 +25,7 @@ public:
      * @param dateofenrollment The date of enrollment of the student. Default is defaultDate.
      * @param creditHoursCompleted The number of credit hours completed by the student. Default is 0.
      */
-    Student(int identifier = 0, string fname = "x", string lname = "x", string address = "x", Date dateofenrollment = defaultDate, int creditHoursCompleted = 0);
+    Student(int identifier = 0, string fname = "x", string lname = "x", string address = "x", Date dateofenrollment = Date(0, 0, 0), int creditHoursCompleted = 0);
 
     /** MODIFICATION MEMBER FUNCTIONS */
     /**
