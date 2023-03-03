@@ -29,5 +29,5 @@ class Person
 	int Pack (IOBuffer &) const;
 	void Print (ostream &, char * label = 0) const;
 };
-#include "person.cpp"
+#include "person2.cpp"
 #endif

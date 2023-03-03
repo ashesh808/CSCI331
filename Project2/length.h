@@ -27,5 +27,6 @@ class LengthFieldBuffer: public VariableLengthBuffer
  	int Init ();
    protected:
 };
+
 #include "length.cpp"
 #endif

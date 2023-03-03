@@ -1,5 +1,5 @@
 //person.cc
-#include "person.h"
+#include "person2.h"
 
 Person::Person (){Clear ();}
 

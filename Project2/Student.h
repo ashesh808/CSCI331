@@ -2,7 +2,7 @@
  * Description: Header file for class defination of Student
  * Name: Ashesh Nepal
  * starID: ta9983ry
- * Date: 27th January, 2023
+ * Date: 2nd March, 2023
  * Profressor: Jie Meichsner
  */
 
@@ -12,6 +12,9 @@
 /** Provides ostream and istream*/
 #include <iostream>
 #include "Date.h"
+#include "fixfld.h"
+// #include "length.h"
+#include "delim.h"
 
 class Student
 {
@@ -25,115 +28,7 @@ public:
      * @param dateofenrollment The date of enrollment of the student. Default is defaultDate.
      * @param creditHoursCompleted The number of credit hours completed by the student. Default is 0.
      */
-    Student(int identifier = 0, string fname = "x", string lname = "x", string address = "x", Date dateofenrollment = Date(0, 0, 0), int creditHoursCompleted = 0);
-
-    /** MODIFICATION MEMBER FUNCTIONS */
-    /**
-     * Set the unique identifier of this student
-     * @param identifier the identifier to set
-     */
-    void setIdentifier(int identifier)
-    {
-        this->identifier = identifier;
-    }
-
-    /**
-     * Set the first name of this student
-     * @param fname the fname to set
-     */
-    void setFname(string fname)
-    {
-        this->fname = fname;
-    }
-
-    /**
-     * Set the last name of this student
-     * @param lname the lname to set
-     */
-    void setLname(string lname)
-    {
-        this->lname = lname;
-    }
-
-    /**
-     * Set the address of this student
-     * @param address the address to set
-     */
-    void setAddress(string address)
-    {
-        this->address = address;
-    }
-
-    /**
-     * Set the date of enrollment of this student
-     * @param dateofenrollment the dateofenrollment to set
-     */
-    void setDateofenrollment(Date dateofenrollment)
-    {
-        this->dateofenrollment = dateofenrollment;
-    }
-
-    /**
-     * Set the credit hours completed by this student
-     * @param creditHoursCompleted the creditHoursCompleted to set
-     */
-    void setCreditHoursCompleted(int creditHoursCompleted)
-    {
-        this->creditHoursCompleted = creditHoursCompleted;
-    }
-
-    /** CONSTANT MEMBER FUNCTIONS */
-    /**
-     * Get the unique identifier of this student
-     * @return the identifier
-     */
-    int getIdentifier() const
-    {
-        return identifier;
-    }
-    /**
-     * Get the first name of this student
-     * @return the fname
-     */
-    string getFname() const
-    {
-        return fname;
-    }
-    /**
-     * Get the last name of this student
-     * @return the lname
-     */
-    string getLname() const
-    {
-        return lname;
-    }
-
-    /**
-     * Get the address of this student
-     * @return the address
-     */
-    string getAddress() const
-    {
-        return address;
-    }
-
-    /**
-     * Get the date of enrollment of this student
-     * @return the dateofenrollment
-     */
-    Date getDateofenrollment() const
-    {
-        return dateofenrollment;
-    }
-    /**
-     * Get the credit hours completed by this student
-     * @return the creditHoursCompleted
-     */
-    int getCreditHoursCompleted() const
-    {
-        return creditHoursCompleted;
-    }
-
+    Student();
     /**
      * Overloads the ">>" operator for Student objects.
      * Reads values for the student's identifier, first name, last name, address, date of enrollment and credit hours completed from an input stream, and stores them in the target Student object.
@@ -144,41 +39,26 @@ public:
      */
     friend istream &operator>>(istream &ins, Student &target);
 
-    /**
-    @brief two events based on thier eventTime.
-    @pre  None.
-    @post  If event has a greater event time than EventTime true is returned else false.
-    @param event  The event with which comparision is made.
-    @return  True if event has a bigger eventTime than eventTime else false. */
-    Student &operator=(const Student &other)
-    {
-        identifier = other.identifier;
-        /** first name of this student*/
-        string fname = other.fname;
-        /** last name of this student*/
-        string lname = other.lname;
-        /** address of this student*/
-        string address = other.address;
-        /** date of enrollment of this student*/
-        Date dateofenrollment = other.dateofenrollment;
-        /** credit hours completed by this student*/
-        int creditHoursCompleted = other.creditHoursCompleted;
-        return *this;
-    }
-
-private:
+    // Buffer Methods
+    static int InitBuffer(DelimFieldBuffer &);
+    static int InitBuffer(LengthFieldBuffer &);
+    static int InitBuffer(FixedFieldBuffer &);
+    void Clear();
+    int Unpack(IOBuffer &);
+    int Pack(IOBuffer &) const;
+    void Print(ostream &, char *label = 0) const;
     /** unique identifier of this student*/
-    int identifier;
+    char identifier[11];
     /** first name of this student*/
-    string fname;
+    char fname[11];
     /** last name of this student*/
-    string lname;
+    char lname[16];
     /** address of this student*/
-    string address;
+    char address[16];
     /** date of enrollment of this student*/
-    Date dateofenrollment;
+    char dateofenrollment[11];
     /** credit hours completed by this student*/
-    int creditHoursCompleted;
+    char creditHoursCompleted[10];
 };
 
 /* NONMEMBER FUNCTIONS for the fraction class */
@@ -193,4 +73,5 @@ private:
  */
 std::ostream &operator<<(std::ostream &outs, const Student &source);
 
+#include "student.cpp"
 #endif

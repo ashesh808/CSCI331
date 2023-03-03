@@ -2,15 +2,18 @@
  * Description: Header file for class defination of Date
  * Name: Ashesh Nepal
  * starID: ta9983ry
- * Date: 27th January, 2023
+ * Date: 2nd March, 2023
  * Profressor: Jie Meichsner
  */
 
-#ifndef COURSEREGISTRATION
-#define COURSEREGISTRATION
+#ifndef _COURSEREGISTRATION_H
+#define _COURSEREGISTRATION_H
 
 /** Provides ostream and istream*/
 #include <iostream>
+#include "fixfld.h"
+#include "length.h"
+#include "delim.h"
 using namespace std;
 
 class CourseRegistration
@@ -26,74 +29,22 @@ public:
 	 * @param creditHours the number of credit hours (default 0)
 	 * @param grade the course grade (default "")
 	 */
-	CourseRegistration(int courseId = 0, int studentId = 0, int creditHours = 0, string grade = "")
-		: courseId_(courseId), studentId_(studentId), creditHours_(creditHours), grade_(grade) {}
+	CourseRegistration();
+	//Buffer Methods
+    static int InitBuffer (DelimFieldBuffer &);
+	static int InitBuffer (LengthFieldBuffer &);
+	static int InitBuffer (FixedFieldBuffer &);
+	void Clear ();
+	int Unpack (IOBuffer &);
+	int Pack (IOBuffer &) const;
+	void Print (ostream &, char * label = 0) const;
 
-	// Get/Set methods
-	/**
-	 * Returns the course identifier for this CourseRegistration.
-	 *
-	 * @return the course identifier
-	 */
-	int getCourseId() const { return courseId_; }
-	/**
-	 * Sets the course identifier for this CourseRegistration.
-	 *
-	 * @param courseId the new course identifier
-	 */
-	void setCourseId(int courseId) { courseId_ = courseId; }
-	/**
-	 * Returns the student identifier for this CourseRegistration.
-	 *
-	 * @return the student identifier
-	 */
-	int getStudentId() const { return studentId_; }
-
-	/**
-	 * Sets the student identifier for this CourseRegistration.
-	 *
-	 * @param studentId the new student identifier
-	 */
-	void setStudentId(int studentId) { studentId_ = studentId; }
-	/**
-	 * Returns the number of credit hours for this CourseRegistration.
-	 *
-	 * @return the number of credit hours
-	 */
-	int getCreditHours() const { return creditHours_; }
-	/**
-	 * Sets the number of credit hours for this CourseRegistration.
-	 *
-	 * @param creditHours the new number of credit hours
-	 */
-	void setCreditHours(int creditHours) { creditHours_ = creditHours; }
-	/**
-	 * Returns the course grade for this CourseRegistration.
-	 *
-	 * @return the course grade
-	 */
-	string getGrade() const { return grade_; }
-
-	/**
-	 * Sets the course grade for this CourseRegistration.
-	 *
-	 * @param grade the new course grade
-	 */
-	void setGrade(string grade) { grade_ = grade; }
-	/**
-	 * @brief Reads a CourseRegistration from an input stream
-	 * @param ins the input stream to read from
-	 * @param target the CourseRegistration object to store the read data
-	 * @pre None
-	 * @post The data for the CourseRegistration object has been read from the input stream. The input stream is returned.
-	 */
-	friend istream &operator>>(istream &ins, CourseRegistration &target);
-
-private:
-	int courseId_;
-	int studentId_;
-	int creditHours_;
-	string grade_;
+	//Feilds	
+    char courseId_[11];
+    char studentId_[11];
+    char creditHours_[16];
+    char grade_[9];
+    
 };
 
 /* NONMEMBER FUNCTIONS for the fraction class */
@@ -106,7 +57,7 @@ private:
  * @post The contents of the source CourseRegistration object have been written to the outs output stream
  * @return the output stream
  */
-
 std::ostream &operator<<(std::ostream &outs, const CourseRegistration &source);
 
+#include "CourseRegistration.cpp"
 #endif

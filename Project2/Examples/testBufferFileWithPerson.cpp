@@ -3,7 +3,7 @@
 #include "iobuffer.h"
 #include "fixfld.h"
 #include "length.h"
-#include "person.h"
+#include "person2.h"
 #include "buffile.h"
 
 using namespace std;
