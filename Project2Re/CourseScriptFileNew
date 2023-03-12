@@ -1,0 +1,94 @@
+Script started on Fri 03 Mar 2023 11:35:57 PM CST
+]0;ta9983ry@csci4:~/CSCI331/Project2[?1034h[ta9983ry@csci4 Project2]$ ./course
+bash: ./course: No such file or directory
+]0;ta9983ry@csci4:~/CSCI331/Project2[ta9983ry@csci4 Project2]$ ./course[K[K[K[K[K[K[K[Kls
+buffile.cpp             CourseRegistrationDriver.cpp  courseTest      delfile.dat  deltext.h    fixlen.cpp   iobuffer.cpp  length.h     person.h       studentDriver        StudentScriptFileNew
+buffile.h               CourseRegistration.h          Date.cpp        delim.cpp    fixfile.dat  fixlen.h     iobuffer.h    lentext.cpp  [0m[38;5;34mstudent[0m        StudentDriver.cpp    studentTest
+[38;5;34mCourse[0m                  coursescriptdriver            DateDriver.cpp  delim.h      fixfld.cpp   fixtext.cpp  lenfile.dat   lentext.h    Student.cpp    Student.h            varlen.cpp
+CourseRegistration.cpp  CourseScriptFileNew           Date.h          deltext.cpp  fixfld.h     fixtext.h    length.cpp    person.cpp   studentdriver  studentscriptdriver  varlen.h
+]0;ta9983ry@csci4:~/CSCI331/Project2[ta9983ry@csci4 Project2]$ ls./coursestudent[4Pclear[3Plsclearscript coursescriptdriverclear[Kscript studentscriptdriverclear[K[3Plsclearscript studentDriverclear[Kg++ -o sd StudentDriver.cpp  [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cclear[Kg++ -o sd StudentDriver.cpp  [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cclear[Kg++ -o sd StudentDriver.cpp  [1P[1P[1@c[1@r[C[C[C[C[C[C[C[C[1P[1P[1P[1P[1P[1P[1P[1@C[1@o[1@u[1@r[1@s[1@e[1@R[1@e[1@g[1@i[1@s[1@t[1@a[1P[1@r[1@a[1@t[1@i[1@o[1@n
+[01m[KCourseRegistrationDriver.cpp:[m[K In function ‘[01m[Kvoid testFixedField()[m[K’:
+[01m[KCourseRegistrationDriver.cpp:119:35:[m[K [01;35m[Kwarning: [m[Kdeprecated conversion from string constant to ‘[01m[Kchar*[m[K’ [-Wwrite-strings]
+     testBuffer(Buff, "fixfile.dat");
+[01;32m[K                                   ^[m[K
+[01m[KCourseRegistrationDriver.cpp:[m[K In function ‘[01m[Kvoid testLength()[m[K’:
+[01m[KCourseRegistrationDriver.cpp:127:35:[m[K [01;35m[Kwarning: [m[Kdeprecated conversion from string constant to ‘[01m[Kchar*[m[K’ [-Wwrite-strings]
+     testBuffer(Buff, "lenfile.dat");
+[01;32m[K                                   ^[m[K
+[01m[KCourseRegistrationDriver.cpp:[m[K In function ‘[01m[Kvoid testDelim()[m[K’:
+[01m[KCourseRegistrationDriver.cpp:136:35:[m[K [01;35m[Kwarning: [m[Kdeprecated conversion from string constant to ‘[01m[Kchar*[m[K’ [-Wwrite-strings]
+     testBuffer(Buff, "delfile.dat");
+[01;32m[K                                   ^[m[K
+CourseRegistrationDriver.cpp: In instantiation of ‘[01m[Kvoid testBuffer(IOB&, char*) [with IOB = FixedFieldBuffer][m[K’:
+[01m[KCourseRegistrationDriver.cpp:119:35:[m[K   required from here
+[01m[KCourseRegistrationDriver.cpp:70:40:[m[K [01;35m[Kwarning: [m[Kdeprecated conversion from string constant to ‘[01m[Kchar*[m[K’ [-Wwrite-strings]
+     student.Print(cout, "First record:");
+[01;32m[K                                        ^[m[K
+[01m[KCourseRegistrationDriver.cpp:73:41:[m[K [01;35m[Kwarning: [m[Kdeprecated conversion from string constant to ‘[01m[Kchar*[m[K’ [-Wwrite-strings]
+     student.Print(cout, "Second record:");
+[01;32m[K                                         ^[m[K
+[01m[KCourseRegistrationDriver.cpp:76:39:[m[K [01;35m[Kwarning: [m[Kdeprecated conversion from string constant to ‘[01m[Kchar*[m[K’ [-Wwrite-strings]
+     student.Print(cout, "Third record");
+[01;32m[K                                       ^[m[K
+[01m[KCourseRegistrationDriver.cpp:79:40:[m[K [01;35m[Kwarning: [m[Kdeprecated conversion from string constant to ‘[01m[Kchar*[m[K’ [-Wwrite-strings]
+     student.Print(cout, "Fourth record");
+[01;32m[K                                        ^[m[K
+CourseRegistrationDriver.cpp: In instantiation of ‘[01m[Kvoid testBuffer(IOB&, char*) [with IOB = LengthFieldBuffer][m[K’:
+[01m[KCourseRegistrationDriver.cpp:127:35:[m[K   required from here
+[01m[KCourseRegistrationDriver.cpp:70:40:[m[K [01;35m[Kwarning: [m[Kdeprecated conversion from string constant to ‘[01m[Kchar*[m[K’ [-Wwrite-strings]
+     student.Print(cout, "First record:");
+[01;32m[K                                        ^[m[K
+[01m[KCourseRegistrationDriver.cpp:73:41:[m[K [01;35m[Kwarning: [m[Kdeprecated conversion from string constant to ‘[01m[Kchar*[m[K’ [-Wwrite-strings]
+     student.Print(cout, "Second record:");
+[01;32m[K                                         ^[m[K
+[01m[KCourseRegistrationDriver.cpp:76:39:[m[K [01;35m[Kwarning: [m[Kdeprecated conversion from string constant to ‘[01m[Kchar*[m[K’ [-Wwrite-strings]
+     student.Print(cout, "Third record");
+[01;32m[K                                       ^[m[K
+[01m[KCourseRegistrationDriver.cpp:79:40:[m[K [01;35m[Kwarning: [m[Kdeprecated conversion from string constant to ‘[01m[Kchar*[m[K’ [-Wwrite-strings]
+     student.Print(cout, "Fourth record");
+[01;32m[K                                        ^[m[K
+CourseRegistrationDriver.cpp: In instantiation of ‘[01m[Kvoid testBuffer(IOB&, char*) [with IOB = DelimFieldBuffer][m[K’:
+[01m[KCourseRegistrationDriver.cpp:136:35:[m[K   required from here
+[01m[KCourseRegistrationDriver.cpp:70:40:[m[K [01;35m[Kwarning: [m[Kdeprecated conversion from string constant to ‘[01m[Kchar*[m[K’ [-Wwrite-strings]
+     student.Print(cout, "First record:");
+[01;32m[K                                        ^[m[K
+[01m[KCourseRegistrationDriver.cpp:73:41:[m[K [01;35m[Kwarning: [m[Kdeprecated conversion from string constant to ‘[01m[Kchar*[m[K’ [-Wwrite-strings]
+     student.Print(cout, "Second record:");
+[01;32m[K                                         ^[m[K
+[01m[KCourseRegistrationDriver.cpp:76:39:[m[K [01;35m[Kwarning: [m[Kdeprecated conversion from string constant to ‘[01m[Kchar*[m[K’ [-Wwrite-strings]
+     student.Print(cout, "Third record");
+[01;32m[K                                       ^[m[K
+[01m[KCourseRegistrationDriver.cpp:79:40:[m[K [01;35m[Kwarning: [m[Kdeprecated conversion from string constant to ‘[01m[Kchar*[m[K’ [-Wwrite-strings]
+     student.Print(cout, "Fourth record");
+[01;32m[K                                        ^[m[K
+]0;ta9983ry@csci4:~/CSCI331/Project2[ta9983ry@csci4 Project2]$ ./cr
+Initializing 3 Persons
+Course:
+	 Identifier '1234555'
+	 Student ID '898989'
+	 Credit Hours '30'
+	 Grade 'A'
+Course:
+	 Identifier '768375402'
+	 Student ID '253253'
+	 Credit Hours '20'
+	 Grade 'B'
+Course:
+	 Identifier '78787'
+	 Student ID '88888'
+	 Credit Hours '50'
+	 Grade 'C'
+Testing Fixed Field Buffer
+open file 0
+Unable to open file fixfile.dat
+
+Testing LengthTextBuffer
+open file 0
+Unable to open file lenfile.dat
+
+Testing DelimTextBuffer
+open file 0
+Unable to open file delfile.dat
+]0;ta9983ry@csci4:~/CSCI331/Project2[ta9983ry@csci4 Project2]$ exit
+
+Script done on Fri 03 Mar 2023 11:36:58 PM CST

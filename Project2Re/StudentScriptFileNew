@@ -1,0 +1,38 @@
+Script started on Fri 03 Mar 2023 11:35:39 PM CST
+]0;ta9983ry@csci4:~/CSCI331/Project2[?1034h[ta9983ry@csci4 Project2]$ ./student
+Initializing 3 Persons
+Student:
+	 Identifier '1234555'
+	 First Name 'John'
+	 Last Name 'Ames'
+	 Address '123 Maple'
+	 Date of Enrollment '08/23/22'
+	 Credit Hours Completed '74'
+Student:
+	 Identifier '42141241'
+	 First Name 'Alan'
+	 Last Name 'Mason'
+	 Address '90 Eastgate'
+	 Date of Enrollment '12/42/90'
+	 Credit Hours Completed '90'
+Student:
+	 Identifier '8888888888'
+	 First Name 'Gregory'
+	 Last Name 'Riccardi'
+	 Address '2006 W Randolph'
+	 Date of Enrollment '12/23/02'
+	 Credit Hours Completed '100'
+Testing Fixed Field Buffer
+open file 0
+Unable to open file fixfile.dat
+
+Testing LengthTextBuffer
+open file 0
+Unable to open file lenfile.dat
+
+Testing DelimTextBuffer
+open file 0
+Unable to open file delfile.dat
+]0;ta9983ry@csci4:~/CSCI331/Project2[ta9983ry@csci4 Project2]$ exit
+
+Script done on Fri 03 Mar 2023 11:35:48 PM CST
