@@ -104,4 +104,5 @@ class DelimTextBuffer
 	int count;
 };
 
+#include "deltext.cpp"
 #endif

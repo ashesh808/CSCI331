@@ -66,4 +66,5 @@ class Zipcode
 	void Print (std::ostream &);
 };
 
+#include "zipcode.cpp"
 #endif
