@@ -170,7 +170,7 @@ void application()
 	int n = (sizeof(StateArray)/sizeof(StateArray[0]));
 
 	//istream
-	std::ifstream InFile("us_postal_codes.csv", std::ios::in);
+	std::ifstream InFile("test.csv", std::ios::in);
 	DelimTextBuffer InBuff;
 	Zipcode :: InitBuffer (InBuff);
 
