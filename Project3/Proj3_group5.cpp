@@ -4,13 +4,12 @@
 \author Emily Yang
 \author Tyler Knudtson
 \author Ashesh Nepal
-\brief Driver file for Zipcode class
+\brief Takes a csv file containing US postal codes as inputs and generates an output table consiting of each of the state's
+easternmost, westernmost, northernmost and southernmost zipcodes based on latitude and longitude comparisions
 */
-
 #include <fstream>
 #include <iostream>
 #include <string>
-#include <string.h>
 #include <iomanip>
 #include <algorithm>
 #include "deltext.h"
@@ -19,7 +18,7 @@
 
 
 /**
-\fn compareStates
+\fn compareStates (required for sorting)
 compares two states to see if they're in alphabetical order
 \param An instance of stateStruct
 \param An instance of stateStruct
@@ -40,11 +39,11 @@ copies into an array of stateStruct structs given an array of Zipcode objects
 \param int Size of Zipcode Array
 \post stateStruct Array will be filled with data from Zipcode Array
 **/
-void constructStateArray(State sArray[], Zipcode zArray[], int sArraySize, int zArraySize){
+void constructStateArray(State sArray[], Zipcode zArray[], int zArraySize){
 	int count = 0;
 	for(int i = 0; i < zArraySize; i++){
 		bool found = false;
-		for(int j= 0; j < sArraySize; j++){
+		for(int j= 0; j < 50; j++){
 			if(zArray[i].State[0] == sArray[j].stateName[0]&&zArray[i].State[1] == sArray[j].stateName[1]){
 				found = true;
 				break;
@@ -75,9 +74,10 @@ finds the largest and smallest latitudes and longitues and corresponding Zipcode
 \param int Size of stateStruct Array 
 \param int Size of Zipcode Array
 \post stateStruct Array will be filled with data corresponding to Zipcodes that are the furthest in each direction*/
-void findLargestSmallestLatLong(State sArray[], Zipcode zArray[], int sArraySize, int zArraySize){
+void setZipCodes(State sArray[], Zipcode zArray[], int zArraySize){
+
 	for(int i = 0; i < zArraySize; i++){
-		for(int j = 0; j < sArraySize; j++){
+		for(int j = 0; j < 51; j++){
 			if(zArray[i].State[0] == sArray[j].stateName[0]&&zArray[i].State[1] == sArray[j].stateName[1]){
 				if(std::stof(zArray[i].Long) > std::stof(sArray[j].largestLong)){
 					strcpy(sArray[j].largestLong,zArray[i].Long);
@@ -107,13 +107,13 @@ void findLargestSmallestLatLong(State sArray[], Zipcode zArray[], int sArraySize
 \param Array of stateStruct objects
 \param int Size of stateStruct Array 
 \post the stateStruct array is packed into the buffer and written to the specified file*/
-void outputTable(std::string outputFileName, DelimTextBuffer OutBuff, State sArray[], int sArraySize){
+void outputTable(std::string outputFileName, DelimTextBuffer OutBuff, State sArray[]){
 	std::ofstream OutFile (outputFileName,std::ios::out);
 	char state [3] = "ST";
-	char easternZipcode [6] = "E Zip";
-	char westernZipcode [6] = "W Zip";
-	char northernZipcode [6] = "N Zip";
-	char southernZipcode [6] = "S Zip";
+	char easternZipcode [6] = "E-Zip";
+	char westernZipcode [6] = "W-Zip";
+	char northernZipcode [6] = "N-Zip";
+	char southernZipcode [6] = "S-Zip";
 	OutBuff.Clear();
 	OutBuff.Pack(state);
 	OutBuff.Pack(easternZipcode);
@@ -124,7 +124,7 @@ void outputTable(std::string outputFileName, DelimTextBuffer OutBuff, State sArr
 
 	std::cout << state << "," << easternZipcode << "," << westernZipcode << "," << northernZipcode << "," << southernZipcode << std::endl;
 
-	for(int i = 0;i < sArraySize; i++){
+	for(int i = 0;i < 50; i++){
 		OutBuff.Clear();
 		OutBuff.Pack(sArray[i].stateName);
 		OutBuff.Pack(sArray[i].easternZipcode);
@@ -145,35 +145,29 @@ Contains the code for controlling the Zipcode class and generating output file.
 */
 void application()
 {
-	Zipcode ZipcodeArray[45000];
+	Zipcode ZipcodeArray[41000];
 	State StateArray[50];
 	int index = 0;
-	int n = (sizeof(StateArray)/sizeof(StateArray[0]));
-
-	std::ifstream InFile("us_postal_codes.csv", std::ios::in);
+	std::string filename;
+	std::cout << "Please enter the file name: ";
+	std::cin >> filename;
+	std::ifstream InFile(filename, std::ios::in);
 	DelimTextBuffer InBuff;
 	Zipcode :: InitBuffer (InBuff);
-
 	while(InFile.peek()!=EOF)
 	{
 	InBuff.Read(InFile);
 	ZipcodeArray[index].Unpack(InBuff);
 	index++;
 	}
-
 	InFile.close();
-	
-	constructStateArray(StateArray,ZipcodeArray,n,index);
-
-	std::sort(StateArray,StateArray+n, compareStates);
-
-	findLargestSmallestLatLong(StateArray,ZipcodeArray,n,index);
-
-	std::string outputFileName = "OUTFILE.csv";
+	constructStateArray(StateArray,ZipcodeArray,index);
+	std::sort(StateArray,StateArray+50, compareStates);
+	setZipCodes(StateArray,ZipcodeArray,index);
+	std::string outputFileName = "output_table.csv";
 	DelimTextBuffer OutBuff;
 	Zipcode :: InitBuffer (OutBuff);
-
-	outputTable(outputFileName,OutBuff,StateArray,n);
+	outputTable(outputFileName,OutBuff,StateArray);
 }
 
 /**
