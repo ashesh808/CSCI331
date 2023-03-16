@@ -20,12 +20,11 @@
 
 /**
 \fn compareStates
-compares 2 stateStructs states to see if they're in alphabetical order
+compares two states to see if they're in alphabetical order
 \param An instance of stateStruct
 \param An instance of stateStruct
 \return true if the state field in the state structs are in alphabetical order*/
-
-bool comparteStates(State a, State b){
+bool compareStates(State a, State b){
 	if(a.stateName[0] == b.stateName[0])
 		return(a.stateName[1] < b.stateName[1]);
 
@@ -39,7 +38,8 @@ copies into an array of stateStruct structs given an array of Zipcode objects
 \param Array of Zipcode Objects
 \param int Size of stateStruct Array 
 \param int Size of Zipcode Array
-\post stateStruct Array will be filled with data from Zipcode Array*/
+\post stateStruct Array will be filled with data from Zipcode Array
+**/
 void constructStateArray(State sArray[], Zipcode zArray[], int sArraySize, int zArraySize){
 	int count = 0;
 	for(int i = 0; i < zArraySize; i++){
@@ -143,8 +143,6 @@ Contains the code for controlling the Zipcode class and generating output file.
 \pre specified InFile must be present
 \post sorted OutFile with zip codes from each state will be created
 */
-
-
 void application()
 {
 	Zipcode ZipcodeArray[45000];
@@ -167,7 +165,7 @@ void application()
 	
 	constructStateArray(StateArray,ZipcodeArray,n,index);
 
-	std::sort(StateArray,StateArray+n, comparteStates);
+	std::sort(StateArray,StateArray+n, compareStates);
 
 	findLargestSmallestLatLong(StateArray,ZipcodeArray,n,index);
 
@@ -182,11 +180,8 @@ void application()
 \fn main
 Executes the code present in application()
 */
-
-int main(int argc, char ** argv)
+int main()
 {
-
 	application();
-
 	return 0;
 }

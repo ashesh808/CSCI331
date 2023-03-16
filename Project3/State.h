@@ -1,32 +1,35 @@
+/**
+\file State.h
+\author Steven Kraus
+\author Emily Yang
+\author Tyler Knudtson
+\author Ashesh Nepal
+\brief Declaration file for State class
+*/
 #ifndef STATE_H
 #define STATE_H
 
 class State
 {
+    //Data members set as public for easy access 
 public:
     State();
-    /**state c string*/
-	char stateName [5];
-	/**eastern most Zipcode c string*/
-	char easternZipcode [10];
-	/**western most Zipcode c string*/
-	char westernZipcode [10];
-	/**nothern most Zipcode c string*/
-	char northernZipcode [10];
-	/**southern most Zipcode c string*/
-	char southernZipcode [10];
-	/**Largest Longitude c string*/
-	char largestLong [10];
-	/**Smallest Longitude c string*/
-	char smallestLong [10];
-	/**Largest Latitude c string*/
-	char largestLat [10];
-	/**SmallestLatitude c string*/
-	char smallestLat [10];
+    /** Data members */
+	char stateName [5]; //State name abbriviation 
+	char easternZipcode [10]; //Easternmost Zipcode
+	char westernZipcode [10]; // Westernmost Zipcode
+	char northernZipcode [10]; //Northernmost Zipcode
+	char southernZipcode [10]; //Southernmost Zipcode
+	char largestLong [10]; //Largest longitude
+	char smallestLong [10]; // Smallest longitude
+	char largestLat [10]; //Largest Latitude
+	char smallestLat [10]; // Smallest Latitude
 };
+
 
 State::State()
 {
+    // Set each field to an empty string
 	 stateName[0]  = 0;
 	 easternZipcode[0]  = 0;
 	 westernZipcode[0]  = 0;
@@ -37,7 +40,4 @@ State::State()
 	 largestLat[0]  = 0;
 	 smallestLat[0]  = 0;
 }
-
-
-
 #endif

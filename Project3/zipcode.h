@@ -1,68 +1,81 @@
-//zipcode.h
+/**
+\file zipcode.h
+\author Steven Kraus
+\author Emily Yang
+\author Tyler Knudtson
+\author Ashesh Nepal
+\brief Declaration file for Zipcode class
+*/
 
 #ifndef ZIPCODE_H
 #define ZIPCODE_H
-
 #include <iostream>
 #include "deltext.h"
+
+
+
+/**
+\class 
+\brief declaration file for Zipcode class
+
+Contains function declarations for Zipcode class
+*/
 
 class Zipcode 
 {
   public:
-	/**zipcode*/
+
 	char Code [10];
-	/**city*/
 	char Placename [30];
-	/**state*/
 	char State [5];
-	/**county*/
 	char County [25];
-	/**Latitude*/
 	char Lat [10];
-	/**Longitude*/
 	char Long [10];
 	
-	/**Constructor;
-	 * @pre none;
-	 * @post an empty zipcode object is created*/
+	/** 
+	\fn Zipcode
+	Constructor
+	\post Initializes an empty Zipcode object*/
 	Zipcode ();
 
-	/**MODIFICATION MEMBER FUNCTIONS*/
+	/* MODIFICATION MEMBER FUNCTIONS*/
 
-	/**Clear;
-	 * Sets each field to an empty string
-	 * @pre a Zipcode object must exist
-	 * @post the zipcode object has its fields set to an empty string*/
+	/** 
+	\fn Clear;
+	Sets all fields to empty strings
+	\post All fields set to empty strings*/
 	void Clear ();
 
-	/**InitBuffer;
-	 * Initalizes a given DelimTextBuffer object
-	 * @param DelimTextBuffer object
-	 * @pre a Zipcode object and DelimTextBuffer object must exist
-	 * @post the given DelimTextBuffer Object is initalized(see deltext.h for more documentation)*/
+	/** 
+	\fn InitBuffer;
+	Initializes a DelimTextBuffer object
+	\param the DelimTextBuffer to be initialized
+	\pre a Zipcode object must exist
+	\post the DelimTextBuffer object is initialized*/
 	static int InitBuffer (DelimTextBuffer &);
 
-	/**Unpack;
-	 * Unpacks the zipcode object into a given DelimTextBuffer object
-	 * @param DelimTextBuffer object
-	 * @pre a Zipcode object and DelimTextBuffer object must exist
-	 * @post the Zipcode object is unpacked into a given DelimTextBuffer object*/
+	/** 
+	\fn Unpack;
+	Unpacks DelimTextBuffer into Zipcode object
+	\param the DelimTextBuffer to be unpacked
+	\post the DelimTextBuffer is unpacked into a Zipcode object*/
 	int Unpack (DelimTextBuffer &);
 
-	/**Pack;
-	 * Packs the zipcode object from a given DelimTextBuffer object
-	 * @param DelimTextBufferObject
-	 * @pre a Zipcode object and DelimTextBuffer object must exist
-	 * @post the Zipcode object is packed from a given DelimTextBuffer object*/
+	/** 
+	\fn Pack;
+	Packs the Zipcode object into a DelimTextBuffer object
+	\param The DelimTextBuffer to pack
+	\pre DelimTextBuffer must exist and be initialized
+	\post the Zipcode object is packed into a DelimTextBuffer*/
 	int Pack (DelimTextBuffer &) const;
 
-	/**NONMODIFICATION MEMBER FUNCTIONS*/
+	/* NONMODIFICATION MEMBER FUNCTIONS*/
 
-	/**Print;
-	 * Prints the zipcodes fields to a given ostream object
-	 * @param ostream object
-	 * @pre a Zipcode object must exist
-	 * @post the zipcodes fields are written to the given ostream object*/
+	/** 
+	\fn Print;
+	Prints Zipcode object into an ostream object
+	\param ostream object to print to
+	\post Fields from Zipcode are written into ostream object*/
 	void Print (std::ostream &);
 };
 

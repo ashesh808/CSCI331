@@ -1,5 +1,11 @@
-// FILE: zipcode.cpp
-// CLASS IMPLEMENTED: Zipcode(see zipcode.h for documentation)
+/**
+\file zipcode.cpp
+\author Steven Kraus
+\author Emily Yang
+\author Tyler Knudtson
+\author Ashesh Nepal
+\brief Implementation file for Zipcode class
+*/
 
 #include "zipcode.h"
 
