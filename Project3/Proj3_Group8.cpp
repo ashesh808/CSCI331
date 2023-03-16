@@ -19,28 +19,7 @@
 #include <algorithm>
 #include "deltext.h"
 #include "zipcode.h"
-
-/**State Struct*/
-struct stateStruct{
-	/**state c string*/
-	char state [5];
-	/**eastern most Zipcode c string*/
-	char easternZipcode [10];
-	/**western most Zipcode c string*/
-	char westernZipcode [10];
-	/**nothern most Zipcode c string*/
-	char northernZipcode [10];
-	/**southern most Zipcode c string*/
-	char southernZipcode [10];
-	/**Largest Longitude c string*/
-	char largestLong [10];
-	/**Smallest Longitude c string*/
-	char smallestLong [10];
-	/**Largest Latitude c string*/
-	char largestLat [10];
-	/**SmallestLatitude c string*/
-	char smallestLat [10];
-};
+#include "State.h"
 
 /**compareStates;
  * compares 2 stateStructs states to see if they're in alphabetical order
@@ -48,11 +27,11 @@ struct stateStruct{
  * @param stateStruct b
  * @pre a stateStruct object must exist
  * @post returns true if the state field in the state structs are in alphabetical order*/
-bool comparteStates(stateStruct a, stateStruct b){
-	if(a.state[0] == b.state[0])
-		return(a.state[1] < b.state[1]);
+bool comparteStates(State a, State b){
+	if(a.stateName[0] == b.stateName[0])
+		return(a.stateName[1] < b.stateName[1]);
 
-	return (a.state[0] < b.state[0]);
+	return (a.stateName[0] < b.stateName[0]);
 }
 
 /**constructStateArray;
@@ -63,18 +42,18 @@ bool comparteStates(stateStruct a, stateStruct b){
  * @param int zArraySize size of zArray
  * @pre an array of stateStruct's and an array of Zipcode's must exist
  * @post sArray's fields will be filled with information from zArray's zipcodes*/
-void constructStateArray(stateStruct sArray[], Zipcode zArray[], int sArraySize, int zArraySize){
+void constructStateArray(State sArray[], Zipcode zArray[], int sArraySize, int zArraySize){
 	int count = 0;
 	for(int i = 0; i < zArraySize; i++){
 		bool found = false;
 		for(int j= 0; j < sArraySize; j++){
-			if(zArray[i].State[0] == sArray[j].state[0]&&zArray[i].State[1] == sArray[j].state[1]){
+			if(zArray[i].State[0] == sArray[j].stateName[0]&&zArray[i].State[1] == sArray[j].stateName[1]){
 				found = true;
 				break;
 			}
 		}
 		if(!found){
-			strcpy(sArray[count].state,zArray[i].State);
+			strcpy(sArray[count].stateName,zArray[i].State);
 			strcpy(sArray[count].easternZipcode,zArray[i].Code);
 			strcpy(sArray[count].westernZipcode,zArray[i].Code);
 			strcpy(sArray[count].northernZipcode,zArray[i].Code);
@@ -100,10 +79,10 @@ void constructStateArray(stateStruct sArray[], Zipcode zArray[], int sArraySize,
  * @pre an array of stateStruct's and an array of Zipcode's must exist
  * @post an array of stateStruct's with largest 
  * and smallest latitude and longitues and corresponding zipcodes*/
-void findLargestSmallestLatLong(stateStruct sArray[], Zipcode zArray[], int sArraySize, int zArraySize){
+void findLargestSmallestLatLong(State sArray[], Zipcode zArray[], int sArraySize, int zArraySize){
 	for(int i = 0; i < zArraySize; i++){
 		for(int j = 0; j < sArraySize; j++){
-			if(zArray[i].State[0] == sArray[j].state[0]&&zArray[i].State[1] == sArray[j].state[1]){
+			if(zArray[i].State[0] == sArray[j].stateName[0]&&zArray[i].State[1] == sArray[j].stateName[1]){
 				if(std::stof(zArray[i].Long) > std::stof(sArray[j].largestLong)){
 					strcpy(sArray[j].largestLong,zArray[i].Long);
 					strcpy(sArray[j].westernZipcode,zArray[i].Code);
@@ -132,7 +111,7 @@ void findLargestSmallestLatLong(stateStruct sArray[], Zipcode zArray[], int sArr
  * @param int sArraySize size of sArray
  * @pre an array of stateStructs and a DelimtTextBuffer object must exist
  * @post the given sArray is packed into OutBuff and OutBuff is written to a file with outputFileName*/
-void outputTable(std::string outputFileName, DelimTextBuffer OutBuff, stateStruct sArray[], int sArraySize){
+void outputTable(std::string outputFileName, DelimTextBuffer OutBuff, State sArray[], int sArraySize){
 	std::ofstream OutFile (outputFileName,std::ios::out);
 	char state [3] = "ST";
 	char easternZipcode [6] = "E Zip";
@@ -151,13 +130,13 @@ void outputTable(std::string outputFileName, DelimTextBuffer OutBuff, stateStruc
 
 	for(int i = 0;i < sArraySize; i++){
 		OutBuff.Clear();
-		OutBuff.Pack(sArray[i].state);
+		OutBuff.Pack(sArray[i].stateName);
 		OutBuff.Pack(sArray[i].easternZipcode);
 		OutBuff.Pack(sArray[i].westernZipcode);
 		OutBuff.Pack(sArray[i].northernZipcode);
 		OutBuff.Pack(sArray[i].southernZipcode);
 		OutBuff.Write(OutFile);
-		std::cout << sArray[i].state << "," << sArray[i].easternZipcode << "," << sArray[i].westernZipcode << "," << sArray[i].northernZipcode << "," << sArray[i].southernZipcode << std::endl;
+		std::cout << sArray[i].stateName << "," << sArray[i].easternZipcode << "," << sArray[i].westernZipcode << "," << sArray[i].northernZipcode << "," << sArray[i].southernZipcode << std::endl;
 	}
 	OutFile.close();
 }
@@ -165,12 +144,12 @@ void outputTable(std::string outputFileName, DelimTextBuffer OutBuff, stateStruc
 void application()
 {
 	Zipcode ZipcodeArray[45000];
-	stateStruct StateArray[50];
+	State StateArray[50];
 	int index = 0;
 	int n = (sizeof(StateArray)/sizeof(StateArray[0]));
 
 	//istream
-	std::ifstream InFile("test.csv", std::ios::in);
+	std::ifstream InFile("StateSort.csv", std::ios::in);
 	DelimTextBuffer InBuff;
 	Zipcode :: InitBuffer (InBuff);
 
