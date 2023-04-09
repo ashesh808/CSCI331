@@ -20,8 +20,11 @@ int DelimTextBuffer :: Read (std::istream & stream)
 	Clear ();
 	if (stream.fail()){ std::cout <<"streamfail "<<std::endl; return FALSE;}
 	if (BufferSize > MaxBytes){ std::cout <<"bs > m "<<std::endl; return FALSE;} // buffer overflow	
-	std::getline(stream, Rbuffer); 	
-	BufferSize = Rbuffer.length();	
+	std::getline(stream, Rbuffer); 
+	//std::cout<<Rbuffer<<std::endl;//Rbuffer contains each line of the input file.
+	//BufferSize=Rbuffer.length();//Keep this old code around to verify accuracy of new code.
+	BufferSize=stoi(Rbuffer.substr(0,3));
+	//std::cout<<BufferSize<<std::endl;
 	return stream . good ();
 }
 
@@ -45,7 +48,7 @@ int DelimTextBuffer :: Pack (const char * str, int size)
 	int start = NextByte; // first character to be packed
 
 	memcpy (&Buffer[start], str, len);
-	if(count!=5){
+	if(count!=6){//Modified this to pack 6 fields (instead of 5), added the length record.
 		NextByte += len + 1;
 		if (NextByte > MaxBytes){ std::cout<< NextByte <<"n>m "<< MaxBytes<<std::endl;return FALSE;}
 		Buffer [start+len] = Delim; // add delimeter
@@ -64,13 +67,14 @@ int DelimTextBuffer :: Unpack (char * str)
 {
 	int len = -1; // length of packed string
 	int start = NextByte; // first character to be unpacked
-	if(count!=5){
-		for(int i = start; i < BufferSize; i++)
-		if (Rbuffer[i] == Delim) 
-			{len = i - start;
+	if(count!=6){//This has been changed the default was 5, not 6.
+		for(int i = start; i < BufferSize; i++){
+			if (Rbuffer[i] == Delim) 
+				{len = i - start;
 			
 
-			break;}
+				break;}
+		}//end for
 
 		if (len == -1){ 
 			std::cout <<"len == -1 "<<std::endl; 
@@ -84,6 +88,7 @@ int DelimTextBuffer :: Unpack (char * str)
 
 		strncpy (str, &Rbuffer[start], len);
 		str [len] = 0; // zero termination for string 
+		//std::cout<<str<<std::endl;//For debug only.
 		count++;
 	}else{
 		len = BufferSize-start - 1;
