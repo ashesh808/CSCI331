@@ -27,16 +27,6 @@ int DelimTextBuffer :: Read (std::istream & stream)
 
 	BufferSize = Rbuffer.length();	
 	return stream . good ();
-	/*
-	Clear ();
-	if (stream.fail()){ std::cout <<"streamfail "<<std::endl; return FALSE;}
-	if (BufferSize > MaxBytes){ std::cout <<"bs > m "<<std::endl; return FALSE;} // buffer overflow	
-	std::getline(stream, Rbuffer); 
-	//std::cout<<Rbuffer<<std::endl;//Rbuffer contains each line of the input file.
-	//BufferSize=Rbuffer.length();//Keep this old code around to verify accuracy of new code.
-	BufferSize=stoi(Rbuffer.substr(0,3));
-	//std::cout<<BufferSize<<std::endl;
-	return stream . good ();*/
 }
 
 
@@ -83,14 +73,6 @@ int DelimTextBuffer::PackHeader(const char * str, int size)
 	int start = NextByte; // first character to be packed
 
 	memcpy (&Buffer[start], str, len);
-	//6 IS FOR PACKING ONLY
-	/*if(count == 0){
-		NextByte += len+1;
-		if (NextByte > MaxBytes){ std::cout<<"n = 0 "<<std::endl;return FALSE;}
-		Buffer [start+len] = Delim;
-		BufferSize = NextByte;
-		count++;
-	}else{*/
 	NextByte += len + 1;
 	if (NextByte > MaxBytes){ std::cout<< NextByte <<"n>m "<< MaxBytes<<std::endl;return FALSE;}
 	Buffer [start+len] = Delim; // add delimeter
@@ -108,8 +90,6 @@ int DelimTextBuffer :: Unpack (char * str)
 		for(int i = start; i < BufferSize; i++){
 			if (Rbuffer[i] == Delim) 
 				{len = i - start;
-			
-
 				break;}
 		}//end for
 
@@ -125,7 +105,6 @@ int DelimTextBuffer :: Unpack (char * str)
 
 		strncpy (str, &Rbuffer[start], len);
 		str [len] = 0; // zero termination for string 
-		//std::cout<<str<<std::endl;//For debug only.
 		count++;
 	}else{
 		len = BufferSize-start;

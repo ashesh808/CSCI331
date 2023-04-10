@@ -19,7 +19,6 @@
 /**
 \class 
 \brief declaration file for Zipcode class
-
 Contains function declarations for Zipcode class
 */
 
@@ -64,7 +63,7 @@ class Zipcode
 
 	/** 
 	\fn Pack;
-	Packs the Zipcode object into a DelimTextBuffer object
+	\brief the Zipcode object into a DelimTextBuffer object
 	\param The DelimTextBuffer to pack
 	\pre DelimTextBuffer must exist and be initialized
 	\post the Zipcode object is packed into a DelimTextBuffer*/

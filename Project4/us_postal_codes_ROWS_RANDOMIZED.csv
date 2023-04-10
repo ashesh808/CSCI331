@@ -1,4 +1,4 @@
-RecordSize,ZipCode,PlaceName,State,County,Lat,Long,calculate this,FileType=CSV,Version=1.0,SizeType=ASCII,us_postal_codes_ROWS_RANDOMIZED.pki,PKISchema=CSV,255,FieldsPerRecord=5,PKIFormat=PKI,IndexEndOfHeaderRecord,,
+RecordSize,ZipCode,PlaceName,State,County,Lat,Long,calculate this,FileType=CSV,Version=1.0,SizeType=ASCII,us_postal_codes_ROWS_RANDOMIZED.pki,PKISchema=CSV,255,FieldsPerRecord=5,PKIFormat=PKI,IndexEndOfHeaderRecord,
 43,96737,Ocean View,HI,Hawaii,19.1002,-155.726
 45,97134,Oceanside,OR,Tillamook,45.4549,-123.965
 55,63701,Cape Girardeau,MO,Cape Girardeau,37.3169,-89.5459
