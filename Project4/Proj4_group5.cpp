@@ -15,26 +15,11 @@
 #include <string.h>
 #include <iomanip>
 #include <algorithm>
+#include <random>
 #include "deltext.h"
 #include "zipcode.h"
 #include "State.h"
 
-/**
-\struct stateStruct
-\brief Struct with data values representing a State.
-*/
-struct stateStruct{
-
-	char state [5];
-	char easternZipcode [10];
-	char westernZipcode [10];
-	char northernZipcode [10];
-	char southernZipcode [10];
-	char largestLong [10];
-	char smallestLong [10];
-	char largestLat [10];
-	char smallestLat [10];
-};
 
 /**
 \fn compareStates
@@ -244,6 +229,8 @@ static const int FIELDS_PER_RECORD = 14;
 static const int INDEX_FILE_FORMAT = 15;
 static const int HEADER_RECORD_END = 16;
 
+int myrandom(int i){return std::rand()%i;}
+
 std::string headerArray[HEADER_FIELDS] = {
 	"RecordSize",			//0 record_size
 	"ZipCode",				//1	zip_code
@@ -263,13 +250,22 @@ std::string headerArray[HEADER_FIELDS] = {
 	"PKIFormat=PKI,Index"	//15 index_file_format
 	"EndOfHeaderRecord"		//16 header_record_end
 };
-/**
-\fn application
-Contains the code for controlling the Zipcode class and generating output file.
-\pre specified InFile must be present
-\post sorted OutFile with zip codes from each state will be created
-*/
 
+std::string columnOrderArray[6]={
+	"ZipCode",				//0	zip_code
+	"PlaceName",			//1	place_name
+	"State",				//2	state
+	"County",				//3 county
+	"Lat",					//4 lat
+	"Long",					//5 long
+};
+
+/** packHeader
+ @param string outputFileName
+ @param DelimTextBuffer OutBuff
+ @param string array hArray
+ @pre a DelimTextBuffer object must exist
+ @post the given hArray is packed with header record from given outputFileName file*/
 int packHeader(std::string outputFileName, DelimTextBuffer OutBuff, std::string hArray[]){
 	std::ofstream OutFile(outputFileName,std::ios::out);
 
@@ -288,6 +284,11 @@ std::string generatePKIHeader(std::string PKIheader){
 	return PKIheader;
 }
 
+/** generatePKI
+ @param ofStream PKIOutFile
+ @param int currentPos
+ @param cstyle string zipcode
+ @param int index*/
 void generatePKI(std::ofstream& PKIOutFile, int currentPos, char * zipcode, int index){
 	//std::cout << "entered generatePKI. Index: " << index << std::endl; //DEBUG
 
@@ -302,11 +303,19 @@ void generatePKI(std::ofstream& PKIOutFile, int currentPos, char * zipcode, int 
 	
 }
 
+/** outputCSV
+ @param string outputFileName
+ @param string PKIoutputFileName
+ @param DelimTextBuffer OutBuff
+ @param Zipcode array zArray
+ @param int zSize
+ @param string array hArray
+ @pre a DelimtTextBuffer, and a filled array of zipcodes must exist
+ @post the zipcode array is packed into the buffer and written to the given outputFileName file
+		after the given hArray header record is written. A pki file is generated with the name
+		PKIoutputFileName.*/
 void outputCSV(std::string outputFileName,std::string PKIoutputFileName, DelimTextBuffer OutBuff, Zipcode zArray[], int zSize, std::string hArray[])
 {
-	//std::cout << "Entered outputCSV" << std::endl; //DEBUG
-
-
 	std::ofstream OutFile(outputFileName,std::ios::out);
 	std::ofstream PKIOutFile(PKIoutputFileName,std::ios::out);
 
@@ -343,6 +352,14 @@ void outputCSV(std::string outputFileName,std::string PKIoutputFileName, DelimTe
 
 }
 
+/** readFileWithHeaderLength
+ @param Zipcode array zArray
+ @param DelimTextBuffer InBuff
+ @param string InFileName
+ @pre a DelimTextBuffer object must exist
+ @post the given file InFileName is opened and the header is unpacked into headerArray then
+ 		the rest of the file is read into the InBuff buffer. The contents of the buffer are
+		then unpacked into zArray*/
 int readFileWithHeaderLength(Zipcode zArray[], DelimTextBuffer InBuff, std::string InFileName)
 {
 	std::ifstream InFile(InFileName, std::ios::in);
@@ -375,10 +392,14 @@ int readFileWithHeaderLength(Zipcode zArray[], DelimTextBuffer InBuff, std::stri
 	return index;
 }
 
+/** readFileNoHeaderLength
+ @param Zipcode array zArray
+ @param DelimTextBuffer InBuff
+ @param string InFileName
+ @pre a DelimTextBuffer object must exist
+  @post the given file InFileName is opened and the file is read into the InBuff buffer. The contents of the buffer are
+		then unpacked into zArray*/
 int readFileNoHeaderLength(Zipcode zArray[], DelimTextBuffer InBuff, std::string InFileName){
-	//std::cout <<"readFile entered" << std::endl;//DEBUG
-
-
 	std::ifstream InFile(InFileName, std::ios::in);
 	Zipcode::InitBuffer(InBuff);
 	int index = 0;
@@ -401,6 +422,12 @@ int readFileNoHeaderLength(Zipcode zArray[], DelimTextBuffer InBuff, std::string
 	return index;
 }
 
+/** readPKI
+ @param PKIStruct array pArray
+ @param string PKIFileName
+ @pre none
+ @post the given PKIFileName file is opened and the header is read in and the rest of the contents
+ 		are read and put into pArray*/
 int readPKI(PKIStruct pArray[],std::string PKIFileName){
 	std::ifstream PKIFile(PKIFileName, std::ios::in);
 	DelimTextBuffer InBuff;
@@ -419,6 +446,18 @@ int readPKI(PKIStruct pArray[],std::string PKIFileName){
 
 	return index;
 }
+
+/** searchPKI
+ @param int zIndex
+ @param int pIndex
+ @param int argc
+ @param cstyle string argv
+ @param Zipcode array zArray
+ @param PKIStruct array pArray
+ @pre a filled Zipcode array and filled PKIStruct array must exist
+ @post the given pArray is sequntially search for given argv values. If found 
+ 		it outputs a message to the CLI and if not found it outputs a message
+		to the CLI.*/
 
 void searchPKI(int zIndex, int pIndex, int argc, char** argv, Zipcode zArray[], PKIStruct pArray[]){
 	char arg[10];
@@ -443,16 +482,93 @@ void searchPKI(int zIndex, int pIndex, int argc, char** argv, Zipcode zArray[], 
 	}
 }
 
+/** generateColumOrder
+ * @param hArray headerArray
+ * @pre none
+ * @post the header array has its 1-6 items shuffled and the column order is randomized
+*/
+void generateColumnOrder(std::string hArray[])
+{
+	std::srand(unsigned(std::time(0)));
+	std::random_shuffle(std::begin(columnOrderArray),std::end(columnOrderArray),myrandom);
+	for(int i = 0; i < 6;i++){
+		hArray[i+1] = columnOrderArray[i];
+	}
+}
+
+/** outputRandomColumnCSV
+ @param string outputFileName
+ @param string PKIoutputFileName
+ @param DelimTextBuffer OutBuff
+ @param Zipcode array zArray
+ @param int zSize
+ @param string array hArray
+ @pre a DelimtTextBuffer, and a filled array of zipcodes must exist
+ @post the zipcode array is packed into the buffer randomly and written to the given outputFileName file
+		after the given hArray header record is written. A pki file is generated with the name
+		PKIoutputFileName.*/
+void outputRandomColumnCSV(std::string outputFileName,std::string PKIoutputFileName, DelimTextBuffer OutBuff, Zipcode zArray[], int zSize, std::string hArray[])
+{
+	//std::cout << "Entered outputCSV" << std::endl; //DEBUG
+
+	generateColumnOrder(hArray);
+	std::ofstream OutFile(outputFileName,std::ios::out);
+	std::ofstream PKIOutFile(PKIoutputFileName,std::ios::out);
+
+	unsigned int totalBytes = 0;
+	int recordLength;
+	int pos;
+	std::string s;
+
+	if(OutFile.fail()){std::cout<<"error opening csv"<<std::endl;return;}
+	if(PKIOutFile.fail()){std::cout<<"error opening pki"<<std::endl;return;}
+
+	hArray[HEADER_RECORD_SIZE] = "calculate this";
+	hArray[INDEX_FILE_NAME] = PKIoutputFileName;
+	s = std::to_string(zSize);
+	hArray[RECORD_COUNT]=s;
+
+	pos = packHeader(outputFileName,OutBuff,hArray);
+	OutFile.seekp(pos);
+	for(int i = 0; i < zSize; i++){
+		generatePKI(PKIOutFile,totalBytes,zArray[i].Code,i);
+		recordLength = zArray[i].Size();
+		s = std::to_string(recordLength);
+		OutBuff.Clear();
+		OutBuff.Pack(s.c_str());
+		for(int j = 0; j < 6; j++){
+			if(columnOrderArray[j] == "ZipCode"){OutBuff.Pack(zArray[i].Code);}
+			else if(columnOrderArray[j] == "PlaceName"){OutBuff.Pack(zArray[i].Placename);}
+			else if(columnOrderArray[j] == "State"){OutBuff.Pack(zArray[i].State);}
+			else if(columnOrderArray[j] == "County"){OutBuff.Pack(zArray[i].County);}
+			else if(columnOrderArray[j] == "Lat"){OutBuff.Pack(zArray[i].Lat);}
+			else if(columnOrderArray[j] =="Long"){OutBuff.Pack(zArray[i].Long);}
+					
+			}
+		OutBuff.Write(OutFile);
+		totalBytes +=(recordLength + 2);
+	}
+
+}
+
+/**
+\fn application
+Contains the code for controlling the Zipcode class and generating output file.
+\pre specified InFile must be present
+\post sorted OutFile with zip codes from each state will be created
+*/
+
 void application(int argc, char** argv)
 {
 
+	generateColumnOrder(headerArray);
 	//if (argc!=3){
 	//	std::cout<<"Must Specify an input and output file, e.g."<<std::endl<<"<executable name> 'input.csv' 'output.csv'"<<std::endl;
 	//} else {//If we don't need custom input/output files, this can be omitted.
 	
 	Zipcode ZipcodeArray[45000];
 	PKIStruct PKIArray[45000];
-	stateStruct StateArray[50];
+	State StateArray[50];
 
 	int zIndex = 0;
 	int pIndex = 0;
@@ -478,9 +594,9 @@ void application(int argc, char** argv)
 		PKIFileName = InFileName;
 
 		int input;
-		std::cout << "Do you want to generate a PKI(0) or serach a PKI(1)";
+		std::cout << "Do you want to generate a PKI(0) or serach a PKI(1) or Generate a Column Randomized CSV from an Ordered One(2)";
 		std::cin >> input;
-		if(input != 1 && input != 0){
+		if(input != 1 && input != 0 && input != 2){
 			std::cout <<"You didn't enter a valid option. Goodbye" << std::endl;
 			return;
 		}
@@ -518,103 +634,20 @@ void application(int argc, char** argv)
 
 			outputCSV(outputFileName,PKIFileName,Outbuff,ZipcodeArray,zIndex,headerArray);
 		}
+		else if(input == 2){
+			std::string outputFileName = InFileName;
+			DelimTextBuffer Outbuff;
+			Zipcode::InitBuffer(Outbuff);
+
+			outputRandomColumnCSV(outputFileName,PKIFileName,Outbuff,ZipcodeArray,zIndex,headerArray);
+		}
 		std::string choice;
 		std::cout <<"Would you like to try another file? Type 'end' to exit the program: ";
 		std::cin >> choice;
 
 		if(choice == "end"){another = false;}
 	}
-	/*
-	//std::ifstream InFile(argv[1], std::ios::in);
-	DelimTextBuffer InBuff;
-	Zipcode :: InitBuffer (InBuff);
-	
-	//char** headerList=['FileType=CSV', 'Version=1.0', 'SizeType=ASCII', outputFileName.append(".pki"), "Primary Key Index", "Record Count".append(stoi(sArraySize+3)), "FieldsPerRecord=6"];
-	
-	//Unpack Header:
-	InBuff.Read(InFile);
-	
-	/*
-	char** HeaderInfo;
-	
-
-	InBuff.Unpack(HeaderInfo[0]);
-	InBuff.Unpack(HeaderInfo[1]);
-	InBuff.Unpack(HeaderInfo[2]);
-	InBuff.Unpack(HeaderInfo[3]);
-	InBuff.Unpack(HeaderInfo[4]);
-	InBuff.Unpack(HeaderInfo[5]);
-	InBuff.Unpack(HeaderInfo[6]);
-	
-	ADD BACK MULTILINE COMMENT SYMBOL HERE IF UNCOMMENTED
-
-	char HeaderLength[20];
-	char FileType[20];
-	char Version[20];
-	char SizeType[20];
-	char IndexFile[20];
-	char IndexSchema[20];
-	char RecordCount[20];
-	char FieldsPerRecord[20];
-	//std::cout<<"a"<<std::endl;
-	InBuff.Unpack(HeaderLength);//This is only the header length for the line 1 and will be discarded
-	//std::cout<<"b"<<std::endl;
-	InBuff.Unpack(FileType);
-	//std::cout<<"c"<<std::endl;
-	InBuff.Unpack(Version);
-	//std::cout<<"d"<<std::endl;
-	InBuff.Unpack(SizeType);
-	//std::cout<<"e"<<std::endl;
-	InBuff.Unpack(IndexFile);
-	//std::cout<<"f"<<std::endl;
-	InBuff.Unpack(IndexSchema);
-	//std::cout<<"g"<<std::endl;
-	InBuff.Unpack(RecordCount);
-	
-	InBuff.Read(InFile);
-	InBuff.Unpack(HeaderLength);//This is only the header length for the line 2 and will be discarded
-	InBuff.Unpack(HeaderLength);//This is the total header length
-	
-	//std::cout<<"h"<<std::endl;
-	InBuff.Unpack(FieldsPerRecord);
-	//std::cout<<FileType[0]<<std::endl;
-	//std::cout<<HeaderLength<<"/"<<FileType<<"/"<<Version<<"/"<<SizeType<<"/"<<IndexFile<<"/"<<IndexSchema<<"/"<<RecordCount<<"/"<<FieldsPerRecord<<std::endl;
-	
-	int index = 0;
-	int n = (sizeof(StateArray)/sizeof(StateArray[0]));
-
-	
-	
-
-	while((InFile.peek()!=EOF)and (index==index)){
-	InBuff.Read(InFile);//iterates through the entire file, creating Zipcode instances for each entry.
-	if (ZipcodeArray[index].Unpack(InBuff)==1){//Can remove the if statement as the reason for it was never implemented due to a change in design strategy.
-		index++;
-	}
-	}
-	
-	
-	
-	//Note that char[] IndexFile provides the filename for the Primary Key Index file.
-	
-	InFile.close();
-	
-	constructStateArray(StateArray,ZipcodeArray,n,index);
-
-	std::sort(StateArray,StateArray+n, comparteStates);
-
-	findLargestSmallestLatLong(StateArray,ZipcodeArray,n,index);
-
-	std::string outputFileName = argv[2];
-	DelimTextBuffer OutBuff;
-	Zipcode :: InitBuffer (OutBuff);
-
-	outputTable(outputFileName,OutBuff,StateArray,n);
-	
-	}//end if..else*/
-		
 }
-
 /**
 \fn main
 Executes the code present in application()

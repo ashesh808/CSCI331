@@ -78,6 +78,12 @@ class Zipcode
 	\post Fields from Zipcode are written into ostream object*/
 	void Print (std::ostream &);
 
+
+	/** Size;
+	 * @pre a zipcode object must exist
+	 * @post returns the length of all fields in a zipcode including the commas
+	 * @return int 
+	 */
 	int Size();
 };
 

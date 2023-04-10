@@ -17,7 +17,7 @@ class DelimTextBuffer
 // Record variables can be packed into and extracted from a buffer.
 {
 public:
-	/**Constructor;
+	/** Constructor;
 	 * @param Delim the delimiter character to be used
 	 * @param maxBytes maximum number of characters in the buffer
 	 * @pre none
@@ -27,13 +27,13 @@ public:
 
 	/**MODIFICATION MEMBER FUNCTIONS*/
 
-	/**Clear;
+	/** Clear;
 	 * Clear fields from buffer
 	 * @pre a DelimTextBuffer must exist
 	 * @post the fields in the buffer are empty*/
 	void Clear(); // clear fields from buffer
 
-	/**Read;
+	/** Read;
 	 * Reads into the buffer from an istream object
 	 * @param istream object
 	 * @pre a DelimTextBuffer must exsist
@@ -41,14 +41,14 @@ public:
 	 */
 	int Read(std::istream &);
 
-	/*Read Header
+	/** Read Header
 	Reads the header of an input stream.
 	@param input the input stream to read from
 	@return an integer value indicating success or failure
 	*/
 	int ReadHeader(std::istream &);
 
-	/**Pack;
+	/** Pack;
 	 * Packs the next value into a c style string
 	 * @param a c style string
 	 * @param size of the c style string
