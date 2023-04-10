@@ -1,5 +1,3 @@
-// deltext.h
-// Modified example from text book
 
 #ifndef DELTEXT_H
 #define DELTEXT_H
@@ -41,6 +39,8 @@ class DelimTextBuffer
 	*/
 	int Read (std::istream &);
 
+	int ReadHeader(std::istream &);
+
 	/**Pack;
 	 * Packs the next value into a c style string
 	 * @param a c style string
@@ -57,6 +57,10 @@ class DelimTextBuffer
 	 * @post a c style string is unpacked into the buffer
 	*/
 	int Unpack (char *);
+
+	int PackHeader(const char *, int size = -1);
+
+	int UnpackHeader(char *);
 
 	/**Init
 	 * Initalize the buffer
@@ -84,6 +88,8 @@ class DelimTextBuffer
 	 * @post the entire buffer is written into an ostream object with delimiters
 	*/
 	int Write (std::ostream &) const;
+
+	int WriteHeader(std::ostream &) const;
 
  private:
  	/**delimiter character*/

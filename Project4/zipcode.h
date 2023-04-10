@@ -1,10 +1,12 @@
 /**
-\file zipcode.h
-\author Steven Kraus
-\author Emily Yang
-\author Tyler Knudtson
-\author Ashesh Nepal
-\brief Declaration file for Zipcode class
+ * @file Zipcode.h
+ * @brief Header file for Zipcode class
+ * @version 0.1
+ * @date 2023-04-10
+ * \author Steven Kraus
+ * \author Emily Yang
+ * \author Tyler Knudtson
+ * \author Ashesh Nepal
 */
 
 #ifndef ZIPCODE_H
@@ -24,7 +26,6 @@ Contains function declarations for Zipcode class
 class Zipcode 
 {
   public:
-
 	char Code [10];
 	char Placename [30];
 	char State [5];
@@ -77,6 +78,8 @@ class Zipcode
 	\param ostream object to print to
 	\post Fields from Zipcode are written into ostream object*/
 	void Print (std::ostream &);
+
+	int Size();
 };
 
 #include "zipcode.cpp"
