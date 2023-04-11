@@ -1,0 +1,273 @@
+\hypertarget{class_zipcode}{}\doxysection{Zipcode Class Reference}
+\label{class_zipcode}\index{Zipcode@{Zipcode}}
+
+
+{\ttfamily \#include $<$zipcode.\+h$>$}
+
+
+
+Collaboration diagram for Zipcode\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=154pt]{class_zipcode__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_zipcode_a4be7d8243ded9b87f32d711c62125e5d}{Zipcode}} ()
+\item 
+void \mbox{\hyperlink{class_zipcode_a2168d28e20cc0bf867cd993400db4b5b}{Clear}} ()
+\item 
+int \mbox{\hyperlink{class_zipcode_ac76f036b1525eaf2e8233845f802f874}{Unpack}} (\mbox{\hyperlink{class_delim_text_buffer}{Delim\+Text\+Buffer}} \&)
+\item 
+int \mbox{\hyperlink{class_zipcode_a00ba69542d40e10216deb27c570a620d}{Pack}} (\mbox{\hyperlink{class_delim_text_buffer}{Delim\+Text\+Buffer}} \&) const
+\begin{DoxyCompactList}\small\item\em the \mbox{\hyperlink{class_zipcode}{Zipcode}} object into a \mbox{\hyperlink{class_delim_text_buffer}{Delim\+Text\+Buffer}} object \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_zipcode_a1a1b9a460181252dc4a6899c3dc8c02a}{Print}} (std\+::ostream \&)
+\item 
+int \mbox{\hyperlink{class_zipcode_a9e543e27a4ab8c4f2083cc05bfad67da}{Size}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static int \mbox{\hyperlink{class_zipcode_a203d20401b190353ee55f0f7f82b7745}{Init\+Buffer}} (\mbox{\hyperlink{class_delim_text_buffer}{Delim\+Text\+Buffer}} \&)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+char \mbox{\hyperlink{class_zipcode_a5d7dc2fe8efc1d6dddb85864de3214db}{Code}} \mbox{[}10\mbox{]}
+\item 
+char \mbox{\hyperlink{class_zipcode_ab28e7ce6f7628c2c0cfd3de467fa16ee}{Placename}} \mbox{[}30\mbox{]}
+\item 
+char \mbox{\hyperlink{class_zipcode_a55657e38f79b7eaa4e42d9cc1855f0e9}{State}} \mbox{[}5\mbox{]}
+\item 
+char \mbox{\hyperlink{class_zipcode_ac653cf07b7fec23da670e271a205c6ad}{County}} \mbox{[}25\mbox{]}
+\item 
+char \mbox{\hyperlink{class_zipcode_a0f9a6d238fc0571b7208283fe05799df}{Lat}} \mbox{[}10\mbox{]}
+\item 
+char \mbox{\hyperlink{class_zipcode_a08bf1e5b1609da588b641abe0638716e}{Long}} \mbox{[}10\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_zipcode_a4be7d8243ded9b87f32d711c62125e5d}\label{class_zipcode_a4be7d8243ded9b87f32d711c62125e5d}} 
+\index{Zipcode@{Zipcode}!Zipcode@{Zipcode}}
+\index{Zipcode@{Zipcode}!Zipcode@{Zipcode}}
+\doxysubsubsection{\texorpdfstring{Zipcode()}{Zipcode()}}
+{\footnotesize\ttfamily Zipcode\+::\+Zipcode (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Constructor \begin{DoxyPostcond}{Postcondition}
+Initializes an empty \mbox{\hyperlink{class_zipcode}{Zipcode}} object 
+\end{DoxyPostcond}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=288pt]{class_zipcode_a4be7d8243ded9b87f32d711c62125e5d_cgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_zipcode_a2168d28e20cc0bf867cd993400db4b5b}\label{class_zipcode_a2168d28e20cc0bf867cd993400db4b5b}} 
+\index{Zipcode@{Zipcode}!Clear@{Clear}}
+\index{Clear@{Clear}!Zipcode@{Zipcode}}
+\doxysubsubsection{\texorpdfstring{Clear()}{Clear()}}
+{\footnotesize\ttfamily Zipcode\+::\+Clear (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Sets all fields to empty strings \begin{DoxyPostcond}{Postcondition}
+All fields set to empty strings 
+\end{DoxyPostcond}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=288pt]{class_zipcode_a2168d28e20cc0bf867cd993400db4b5b_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_zipcode_a203d20401b190353ee55f0f7f82b7745}\label{class_zipcode_a203d20401b190353ee55f0f7f82b7745}} 
+\index{Zipcode@{Zipcode}!InitBuffer@{InitBuffer}}
+\index{InitBuffer@{InitBuffer}!Zipcode@{Zipcode}}
+\doxysubsubsection{\texorpdfstring{InitBuffer()}{InitBuffer()}}
+{\footnotesize\ttfamily Zipcode\+::\+Init\+Buffer (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_delim_text_buffer}{Delim\+Text\+Buffer}} \&}]{Buffer }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Initializes a \mbox{\hyperlink{class_delim_text_buffer}{Delim\+Text\+Buffer}} object 
+\begin{DoxyParams}{Parameters}
+{\em the} & \mbox{\hyperlink{class_delim_text_buffer}{Delim\+Text\+Buffer}} to be initialized \\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondition}
+a \mbox{\hyperlink{class_zipcode}{Zipcode}} object must exist 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+the \mbox{\hyperlink{class_delim_text_buffer}{Delim\+Text\+Buffer}} object is initialized 
+\end{DoxyPostcond}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_zipcode_a203d20401b190353ee55f0f7f82b7745_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_zipcode_a00ba69542d40e10216deb27c570a620d}\label{class_zipcode_a00ba69542d40e10216deb27c570a620d}} 
+\index{Zipcode@{Zipcode}!Pack@{Pack}}
+\index{Pack@{Pack}!Zipcode@{Zipcode}}
+\doxysubsubsection{\texorpdfstring{Pack()}{Pack()}}
+{\footnotesize\ttfamily Zipcode\+::\+Pack (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_delim_text_buffer}{Delim\+Text\+Buffer}} \&}]{Buffer }\end{DoxyParamCaption}) const}
+
+
+
+the \mbox{\hyperlink{class_zipcode}{Zipcode}} object into a \mbox{\hyperlink{class_delim_text_buffer}{Delim\+Text\+Buffer}} object 
+
+
+\begin{DoxyParams}{Parameters}
+{\em The} & \mbox{\hyperlink{class_delim_text_buffer}{Delim\+Text\+Buffer}} to pack \\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondition}
+\mbox{\hyperlink{class_delim_text_buffer}{Delim\+Text\+Buffer}} must exist and be initialized 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+the \mbox{\hyperlink{class_zipcode}{Zipcode}} object is packed into a \mbox{\hyperlink{class_delim_text_buffer}{Delim\+Text\+Buffer}} 
+\end{DoxyPostcond}
+Set Code to \textquotesingle{}\textquotesingle{} if writing the header.Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=276pt]{class_zipcode_a00ba69542d40e10216deb27c570a620d_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=160pt]{class_zipcode_a00ba69542d40e10216deb27c570a620d_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_zipcode_a1a1b9a460181252dc4a6899c3dc8c02a}\label{class_zipcode_a1a1b9a460181252dc4a6899c3dc8c02a}} 
+\index{Zipcode@{Zipcode}!Print@{Print}}
+\index{Print@{Print}!Zipcode@{Zipcode}}
+\doxysubsubsection{\texorpdfstring{Print()}{Print()}}
+{\footnotesize\ttfamily Zipcode\+::\+Print (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{stream }\end{DoxyParamCaption})}
+
+Prints \mbox{\hyperlink{class_zipcode}{Zipcode}} object into an ostream object 
+\begin{DoxyParams}{Parameters}
+{\em ostream} & object to print to \\
+\hline
+\end{DoxyParams}
+\begin{DoxyPostcond}{Postcondition}
+Fields from \mbox{\hyperlink{class_zipcode}{Zipcode}} are written into ostream object 
+\end{DoxyPostcond}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_zipcode_a1a1b9a460181252dc4a6899c3dc8c02a_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_zipcode_a9e543e27a4ab8c4f2083cc05bfad67da}\label{class_zipcode_a9e543e27a4ab8c4f2083cc05bfad67da}} 
+\index{Zipcode@{Zipcode}!Size@{Size}}
+\index{Size@{Size}!Zipcode@{Zipcode}}
+\doxysubsubsection{\texorpdfstring{Size()}{Size()}}
+{\footnotesize\ttfamily int Zipcode\+::\+Size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Size; \begin{DoxyPrecond}{Precondition}
+a zipcode object must exist 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+returns the length of all fields in a zipcode including the commas 
+\end{DoxyPostcond}
+\begin{DoxyReturn}{Returns}
+int 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_zipcode_a9e543e27a4ab8c4f2083cc05bfad67da_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_zipcode_ac76f036b1525eaf2e8233845f802f874}\label{class_zipcode_ac76f036b1525eaf2e8233845f802f874}} 
+\index{Zipcode@{Zipcode}!Unpack@{Unpack}}
+\index{Unpack@{Unpack}!Zipcode@{Zipcode}}
+\doxysubsubsection{\texorpdfstring{Unpack()}{Unpack()}}
+{\footnotesize\ttfamily Zipcode\+::\+Unpack (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_delim_text_buffer}{Delim\+Text\+Buffer}} \&}]{Buffer }\end{DoxyParamCaption})}
+
+Unpacks \mbox{\hyperlink{class_delim_text_buffer}{Delim\+Text\+Buffer}} into \mbox{\hyperlink{class_zipcode}{Zipcode}} object 
+\begin{DoxyParams}{Parameters}
+{\em the} & \mbox{\hyperlink{class_delim_text_buffer}{Delim\+Text\+Buffer}} to be unpacked \\
+\hline
+\end{DoxyParams}
+\begin{DoxyPostcond}{Postcondition}
+the \mbox{\hyperlink{class_delim_text_buffer}{Delim\+Text\+Buffer}} is unpacked into a \mbox{\hyperlink{class_zipcode}{Zipcode}} object 
+\end{DoxyPostcond}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=171pt]{class_zipcode_ac76f036b1525eaf2e8233845f802f874_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_zipcode_ac76f036b1525eaf2e8233845f802f874_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_zipcode_a5d7dc2fe8efc1d6dddb85864de3214db}\label{class_zipcode_a5d7dc2fe8efc1d6dddb85864de3214db}} 
+\index{Zipcode@{Zipcode}!Code@{Code}}
+\index{Code@{Code}!Zipcode@{Zipcode}}
+\doxysubsubsection{\texorpdfstring{Code}{Code}}
+{\footnotesize\ttfamily char Zipcode\+::\+Code\mbox{[}10\mbox{]}}
+
+\mbox{\Hypertarget{class_zipcode_ac653cf07b7fec23da670e271a205c6ad}\label{class_zipcode_ac653cf07b7fec23da670e271a205c6ad}} 
+\index{Zipcode@{Zipcode}!County@{County}}
+\index{County@{County}!Zipcode@{Zipcode}}
+\doxysubsubsection{\texorpdfstring{County}{County}}
+{\footnotesize\ttfamily char Zipcode\+::\+County\mbox{[}25\mbox{]}}
+
+\mbox{\Hypertarget{class_zipcode_a0f9a6d238fc0571b7208283fe05799df}\label{class_zipcode_a0f9a6d238fc0571b7208283fe05799df}} 
+\index{Zipcode@{Zipcode}!Lat@{Lat}}
+\index{Lat@{Lat}!Zipcode@{Zipcode}}
+\doxysubsubsection{\texorpdfstring{Lat}{Lat}}
+{\footnotesize\ttfamily char Zipcode\+::\+Lat\mbox{[}10\mbox{]}}
+
+\mbox{\Hypertarget{class_zipcode_a08bf1e5b1609da588b641abe0638716e}\label{class_zipcode_a08bf1e5b1609da588b641abe0638716e}} 
+\index{Zipcode@{Zipcode}!Long@{Long}}
+\index{Long@{Long}!Zipcode@{Zipcode}}
+\doxysubsubsection{\texorpdfstring{Long}{Long}}
+{\footnotesize\ttfamily char Zipcode\+::\+Long\mbox{[}10\mbox{]}}
+
+\mbox{\Hypertarget{class_zipcode_ab28e7ce6f7628c2c0cfd3de467fa16ee}\label{class_zipcode_ab28e7ce6f7628c2c0cfd3de467fa16ee}} 
+\index{Zipcode@{Zipcode}!Placename@{Placename}}
+\index{Placename@{Placename}!Zipcode@{Zipcode}}
+\doxysubsubsection{\texorpdfstring{Placename}{Placename}}
+{\footnotesize\ttfamily char Zipcode\+::\+Placename\mbox{[}30\mbox{]}}
+
+\mbox{\Hypertarget{class_zipcode_a55657e38f79b7eaa4e42d9cc1855f0e9}\label{class_zipcode_a55657e38f79b7eaa4e42d9cc1855f0e9}} 
+\index{Zipcode@{Zipcode}!State@{State}}
+\index{State@{State}!Zipcode@{Zipcode}}
+\doxysubsubsection{\texorpdfstring{State}{State}}
+{\footnotesize\ttfamily char Zipcode\+::\+State\mbox{[}5\mbox{]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{zipcode_8h}{zipcode.\+h}}\item 
+\mbox{\hyperlink{zipcode_8cpp}{zipcode.\+cpp}}\end{DoxyCompactItemize}

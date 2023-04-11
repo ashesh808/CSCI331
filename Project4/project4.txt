@@ -1,0 +1,55 @@
+Script started on Mon 10 Apr 2023 10:08:28 PM CDT
+]0;ta9983ry@csci4:~/CSCI331/Project4[?1034h[ta9983ry@csci4 Project4]$ ls
+deltext.cpp       Proj4_group5.cpp  [0m[38;5;34mtest[0m                                   us_postal_codes.csv                  us_postal_codes_ROWS_RANDOMIZED.pki
+deltext.h         project4.txt      us_postal_codes_COLUMN_RANDOMIZED.csv  us_postal_codes.pki                  zipcode.cpp
+Proj3_group5.cpp  State.h           us_postal_codes_COLUMN_RANDOMIZED.pki  us_postal_codes_ROWS_RANDOMIZED.csv  zipcode.h
+]0;ta9983ry@csci4:~/CSCI331/Project4[ta9983ry@csci4 Project4]$ ./.t[K[Ktest -Z501
+Enter the file name you would like to use or type <cr> to use the default file: us_postal_codes.csv
+Using file: us_postal_codes.csv
+Do you want to generate a PKI(0) or serach a PKI(1) or Generate a Column Randomized CSV from an Ordered One(2)1
+Zipcode Found!
+info:	   ZipCode '501'
+	 Placename 'Holtsville'
+	     State 'NY'
+	    County 'Suffolk'
+	       Lat '40.8154'
+	      Long '-73.0451'
+Would you like to try another file? Type 'end' to exit the program: end
+]0;ta9983ry@csci4:~/CSCI331/Project4[ta9983ry@csci4 Project4]$ ./test -Z501[K[K[K0
+Enter the file name you would like to use or type <cr> to use the default file: us_postal_codes.csv
+Using file: us_postal_codes.csv
+Do you want to generate a PKI(0) or serach a PKI(1) or Generate a Column Randomized CSV from an Ordered One(2)1
+Zipcdoe 0 was not found within this file!
+Would you like to try another file? Type 'end' to exit the program: e yes
+Enter the file name you would like to use or type <cr> to use the default file: us_postal_codes_COLUMN_RANDOMIZED.csv
+Using file: us_postal_codes_COLUMN_RANDOMIZED.csv
+Do you want to generate a PKI(0) or serach a PKI(1) or Generate a Column Randomized CSV from an Ordered One(2)1
+Zipcdoe 0 was not found within this file!
+Would you like to try another file? Type 'end' to exit the program: end
+]0;ta9983ry@csci4:~/CSCI331/Project4[ta9983ry@csci4 Project4]$ ./test -Z0\[K[K96737
+Enter the file name you would like to use or type <cr> to use the default file: us_postalcodes     _codes_ROWS_RANDOMZ IZED.csv
+Using file: us_postal_codes_ROWS_RANDOMIZED.csv
+Do you want to generate a PKI(0) or serach a PKI(1) or Generate a Column Randomized CSV from an Ordered One(2)1
+Zipcode Found!
+info:	   ZipCode '96737'
+	 Placename 'Ocean View'
+	     State 'HI'
+	    County 'Hawaii'
+	       Lat '19.1002'
+	      Long '-155.726'
+Would you like to try another file? Type 'end' to exit the program: end
+]0;ta9983ry@csci4:~/CSCI331/Project4[ta9983ry@csci4 Project4]$ ./test -Z96737[K[K[K[K[K64444
+Enter the file name you would like to use or type <cr> to use the default file: us_p postalc _codes.csv
+Using file: us_postal_codes.csv
+Do you want to generate a PKI(0) or serach a PKI(1) or Generate a Column Randomized CSV from an Ordered One(2)1
+Zipcode Found!
+info:	   ZipCode '64444'
+	 Placename 'Edgerton'
+	     State 'MO'
+	    County 'Platte'
+	       Lat '39.4742'
+	      Long '-94.6352'
+Would you like to try another file? Type 'end' to exit the program: end
+]0;ta9983ry@csci4:~/CSCI331/Project4[ta9983ry@csci4 Project4]$ exit
+
+Script done on Mon 10 Apr 2023 10:11:30 PM CDT

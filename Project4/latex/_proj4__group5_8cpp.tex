@@ -1,0 +1,544 @@
+\hypertarget{_proj4__group5_8cpp}{}\doxysection{Proj4\+\_\+group5.\+cpp File Reference}
+\label{_proj4__group5_8cpp}\index{Proj4\_group5.cpp@{Proj4\_group5.cpp}}
+
+
+Driver file for \mbox{\hyperlink{class_zipcode}{Zipcode}} class.  
+
+
+{\ttfamily \#include $<$fstream$>$}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$iomanip$>$}\newline
+{\ttfamily \#include $<$algorithm$>$}\newline
+{\ttfamily \#include $<$random$>$}\newline
+{\ttfamily \#include \char`\"{}deltext.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}zipcode.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}State.\+h\char`\"{}}\newline
+Include dependency graph for Proj4\+\_\+group5.\+cpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_proj4__group5_8cpp__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_p_k_i_struct}{PKIStruct}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{_proj4__group5_8cpp_ae58feb0c4ac48a38b287226e8c501c5c}{compare\+States}} (\mbox{\hyperlink{class_state}{State}} a, \mbox{\hyperlink{class_state}{State}} b)
+\item 
+void \mbox{\hyperlink{_proj4__group5_8cpp_a855c09617b2d4229b886faacf6576cf8}{construct\+State\+Array}} (\mbox{\hyperlink{class_state}{State}} s\+Array\mbox{[}$\,$\mbox{]}, \mbox{\hyperlink{class_zipcode}{Zipcode}} z\+Array\mbox{[}$\,$\mbox{]}, int z\+Array\+Size)
+\item 
+void \mbox{\hyperlink{_proj4__group5_8cpp_a7dfc14b1019d1c7e3652f86f079bac55}{set\+Zip\+Codes}} (\mbox{\hyperlink{class_state}{State}} s\+Array\mbox{[}$\,$\mbox{]}, \mbox{\hyperlink{class_zipcode}{Zipcode}} z\+Array\mbox{[}$\,$\mbox{]}, int z\+Array\+Size)
+\item 
+void \mbox{\hyperlink{_proj4__group5_8cpp_a8577da1adb2fb8e19116b48e817ddfb1}{output\+Table}} (std\+::string output\+File\+Name, \mbox{\hyperlink{class_delim_text_buffer}{Delim\+Text\+Buffer}} Out\+Buff, \mbox{\hyperlink{class_state}{State}} s\+Array\mbox{[}$\,$\mbox{]}, int s\+Array\+Size)
+\item 
+int \mbox{\hyperlink{_proj4__group5_8cpp_acb04e0eba013626be06bd0006a752538}{myrandom}} (int i)
+\item 
+int \mbox{\hyperlink{_proj4__group5_8cpp_a50243468f4a46ee95c60495dd153e096}{pack\+Header}} (std\+::string output\+File\+Name, \mbox{\hyperlink{class_delim_text_buffer}{Delim\+Text\+Buffer}} Out\+Buff, std\+::string h\+Array\mbox{[}$\,$\mbox{]})
+\item 
+std\+::string \mbox{\hyperlink{_proj4__group5_8cpp_aa9274dd33c6065d6da9c6efc6fed6939}{generate\+PKIHeader}} (std\+::string PKIheader)
+\item 
+void \mbox{\hyperlink{_proj4__group5_8cpp_a2b85a220613748f5de9113b562731795}{generate\+PKI}} (std\+::ofstream \&PKIOut\+File, int current\+Pos, char $\ast$zipcode, int index)
+\item 
+void \mbox{\hyperlink{_proj4__group5_8cpp_afaf32063c880d9fff26db31431c33bbc}{output\+CSV}} (std\+::string output\+File\+Name, std\+::string PKIoutput\+File\+Name, \mbox{\hyperlink{class_delim_text_buffer}{Delim\+Text\+Buffer}} Out\+Buff, \mbox{\hyperlink{class_zipcode}{Zipcode}} z\+Array\mbox{[}$\,$\mbox{]}, int z\+Size, std\+::string h\+Array\mbox{[}$\,$\mbox{]})
+\item 
+int \mbox{\hyperlink{_proj4__group5_8cpp_a2c613cc04ac292e3fcbb341a301bfcc4}{read\+File\+With\+Header\+Length}} (\mbox{\hyperlink{class_zipcode}{Zipcode}} z\+Array\mbox{[}$\,$\mbox{]}, \mbox{\hyperlink{class_delim_text_buffer}{Delim\+Text\+Buffer}} In\+Buff, std\+::string In\+File\+Name)
+\item 
+int \mbox{\hyperlink{_proj4__group5_8cpp_afe493882bd9327c0e2b0808f89ada9d6}{read\+File\+No\+Header\+Length}} (\mbox{\hyperlink{class_zipcode}{Zipcode}} z\+Array\mbox{[}$\,$\mbox{]}, \mbox{\hyperlink{class_delim_text_buffer}{Delim\+Text\+Buffer}} In\+Buff, std\+::string In\+File\+Name)
+\item 
+int \mbox{\hyperlink{_proj4__group5_8cpp_a4e337a3ca86f08df3f11fdcc3d7a8fc9}{read\+PKI}} (\mbox{\hyperlink{struct_p_k_i_struct}{PKIStruct}} p\+Array\mbox{[}$\,$\mbox{]}, std\+::string PKIFile\+Name)
+\item 
+void \mbox{\hyperlink{_proj4__group5_8cpp_a967ffd75b5a2f2de4d2468ab45162803}{search\+PKI}} (int z\+Index, int p\+Index, int argc, char $\ast$$\ast$argv, \mbox{\hyperlink{class_zipcode}{Zipcode}} z\+Array\mbox{[}$\,$\mbox{]}, \mbox{\hyperlink{struct_p_k_i_struct}{PKIStruct}} p\+Array\mbox{[}$\,$\mbox{]})
+\item 
+void \mbox{\hyperlink{_proj4__group5_8cpp_ae652ae2e5bc3112753f633f2aac0a891}{generate\+Column\+Order}} (std\+::string h\+Array\mbox{[}$\,$\mbox{]})
+\item 
+void \mbox{\hyperlink{_proj4__group5_8cpp_aa13f04e5e2bbc6eedf108bfb8b9c802e}{output\+Random\+Column\+CSV}} (std\+::string output\+File\+Name, std\+::string PKIoutput\+File\+Name, \mbox{\hyperlink{class_delim_text_buffer}{Delim\+Text\+Buffer}} Out\+Buff, \mbox{\hyperlink{class_zipcode}{Zipcode}} z\+Array\mbox{[}$\,$\mbox{]}, int z\+Size, std\+::string h\+Array\mbox{[}$\,$\mbox{]})
+\item 
+void \mbox{\hyperlink{_proj4__group5_8cpp_a85986312c73009cddbed09c9451eb258}{application}} (int argc, char $\ast$$\ast$argv)
+\item 
+int \mbox{\hyperlink{_proj4__group5_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}{main}} (int argc, char $\ast$$\ast$argv)
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{_proj4__group5_8cpp_a3b271a1d9e718093778ca113148e809a}{header\+Array}} \mbox{[}HEADER\+\_\+\+FIELDS\mbox{]}
+\item 
+std\+::string \mbox{\hyperlink{_proj4__group5_8cpp_ac599327475e8453f040d265d6607e278}{column\+Order\+Array}} \mbox{[}6\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Driver file for \mbox{\hyperlink{class_zipcode}{Zipcode}} class. 
+
+\begin{DoxyVersion}{Version}
+0.\+1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+2023-\/04-\/10 
+\end{DoxyDate}
+\begin{DoxyAuthor}{Author}
+Steven Kraus 
+
+Emily Yang 
+
+Tyler Knudtson 
+
+Ashesh Nepal 
+\end{DoxyAuthor}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{_proj4__group5_8cpp_a85986312c73009cddbed09c9451eb258}\label{_proj4__group5_8cpp_a85986312c73009cddbed09c9451eb258}} 
+\index{Proj4\_group5.cpp@{Proj4\_group5.cpp}!application@{application}}
+\index{application@{application}!Proj4\_group5.cpp@{Proj4\_group5.cpp}}
+\doxysubsubsection{\texorpdfstring{application()}{application()}}
+{\footnotesize\ttfamily void application (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char $\ast$$\ast$}]{argv }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_proj4__group5_8cpp_a85986312c73009cddbed09c9451eb258_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{_proj4__group5_8cpp_ae58feb0c4ac48a38b287226e8c501c5c}\label{_proj4__group5_8cpp_ae58feb0c4ac48a38b287226e8c501c5c}} 
+\index{Proj4\_group5.cpp@{Proj4\_group5.cpp}!compareStates@{compareStates}}
+\index{compareStates@{compareStates}!Proj4\_group5.cpp@{Proj4\_group5.cpp}}
+\doxysubsubsection{\texorpdfstring{compareStates()}{compareStates()}}
+{\footnotesize\ttfamily bool compare\+States (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_state}{State}}}]{a,  }\item[{\mbox{\hyperlink{class_state}{State}}}]{b }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{_proj4__group5_8cpp_a855c09617b2d4229b886faacf6576cf8}\label{_proj4__group5_8cpp_a855c09617b2d4229b886faacf6576cf8}} 
+\index{Proj4\_group5.cpp@{Proj4\_group5.cpp}!constructStateArray@{constructStateArray}}
+\index{constructStateArray@{constructStateArray}!Proj4\_group5.cpp@{Proj4\_group5.cpp}}
+\doxysubsubsection{\texorpdfstring{constructStateArray()}{constructStateArray()}}
+{\footnotesize\ttfamily void construct\+State\+Array (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_state}{State}}}]{s\+Array\mbox{[}$\,$\mbox{]},  }\item[{\mbox{\hyperlink{class_zipcode}{Zipcode}}}]{z\+Array\mbox{[}$\,$\mbox{]},  }\item[{int}]{z\+Array\+Size }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{_proj4__group5_8cpp_ae652ae2e5bc3112753f633f2aac0a891}\label{_proj4__group5_8cpp_ae652ae2e5bc3112753f633f2aac0a891}} 
+\index{Proj4\_group5.cpp@{Proj4\_group5.cpp}!generateColumnOrder@{generateColumnOrder}}
+\index{generateColumnOrder@{generateColumnOrder}!Proj4\_group5.cpp@{Proj4\_group5.cpp}}
+\doxysubsubsection{\texorpdfstring{generateColumnOrder()}{generateColumnOrder()}}
+{\footnotesize\ttfamily void generate\+Column\+Order (\begin{DoxyParamCaption}\item[{std\+::string}]{h\+Array\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+generate\+Colum\+Order 
+\begin{DoxyParams}{Parameters}
+{\em h\+Array} & header\+Array \\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondition}
+none 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+the header array has its 1-\/6 items shuffled and the column order is randomized 
+\end{DoxyPostcond}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=290pt]{_proj4__group5_8cpp_ae652ae2e5bc3112753f633f2aac0a891_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_proj4__group5_8cpp_ae652ae2e5bc3112753f633f2aac0a891_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{_proj4__group5_8cpp_a2b85a220613748f5de9113b562731795}\label{_proj4__group5_8cpp_a2b85a220613748f5de9113b562731795}} 
+\index{Proj4\_group5.cpp@{Proj4\_group5.cpp}!generatePKI@{generatePKI}}
+\index{generatePKI@{generatePKI}!Proj4\_group5.cpp@{Proj4\_group5.cpp}}
+\doxysubsubsection{\texorpdfstring{generatePKI()}{generatePKI()}}
+{\footnotesize\ttfamily void generate\+PKI (\begin{DoxyParamCaption}\item[{std\+::ofstream \&}]{PKIOut\+File,  }\item[{int}]{current\+Pos,  }\item[{char $\ast$}]{zipcode,  }\item[{int}]{index }\end{DoxyParamCaption})}
+
+generate\+PKI 
+\begin{DoxyParams}{Parameters}
+{\em of\+Stream} & PKIOut\+File \\
+\hline
+{\em int} & current\+Pos \\
+\hline
+{\em cstyle} & string zipcode \\
+\hline
+{\em int} & index \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_proj4__group5_8cpp_a2b85a220613748f5de9113b562731795_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{_proj4__group5_8cpp_aa9274dd33c6065d6da9c6efc6fed6939}\label{_proj4__group5_8cpp_aa9274dd33c6065d6da9c6efc6fed6939}} 
+\index{Proj4\_group5.cpp@{Proj4\_group5.cpp}!generatePKIHeader@{generatePKIHeader}}
+\index{generatePKIHeader@{generatePKIHeader}!Proj4\_group5.cpp@{Proj4\_group5.cpp}}
+\doxysubsubsection{\texorpdfstring{generatePKIHeader()}{generatePKIHeader()}}
+{\footnotesize\ttfamily std\+::string generate\+PKIHeader (\begin{DoxyParamCaption}\item[{std\+::string}]{PKIheader }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{_proj4__group5_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}\label{_proj4__group5_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}} 
+\index{Proj4\_group5.cpp@{Proj4\_group5.cpp}!main@{main}}
+\index{main@{main}!Proj4\_group5.cpp@{Proj4\_group5.cpp}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char $\ast$$\ast$}]{argv }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_proj4__group5_8cpp_a3c04138a5bfe5d72780bb7e82a18e627_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{_proj4__group5_8cpp_acb04e0eba013626be06bd0006a752538}\label{_proj4__group5_8cpp_acb04e0eba013626be06bd0006a752538}} 
+\index{Proj4\_group5.cpp@{Proj4\_group5.cpp}!myrandom@{myrandom}}
+\index{myrandom@{myrandom}!Proj4\_group5.cpp@{Proj4\_group5.cpp}}
+\doxysubsubsection{\texorpdfstring{myrandom()}{myrandom()}}
+{\footnotesize\ttfamily int myrandom (\begin{DoxyParamCaption}\item[{int}]{i }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_proj4__group5_8cpp_acb04e0eba013626be06bd0006a752538_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{_proj4__group5_8cpp_afaf32063c880d9fff26db31431c33bbc}\label{_proj4__group5_8cpp_afaf32063c880d9fff26db31431c33bbc}} 
+\index{Proj4\_group5.cpp@{Proj4\_group5.cpp}!outputCSV@{outputCSV}}
+\index{outputCSV@{outputCSV}!Proj4\_group5.cpp@{Proj4\_group5.cpp}}
+\doxysubsubsection{\texorpdfstring{outputCSV()}{outputCSV()}}
+{\footnotesize\ttfamily void output\+CSV (\begin{DoxyParamCaption}\item[{std\+::string}]{output\+File\+Name,  }\item[{std\+::string}]{PKIoutput\+File\+Name,  }\item[{\mbox{\hyperlink{class_delim_text_buffer}{Delim\+Text\+Buffer}}}]{Out\+Buff,  }\item[{\mbox{\hyperlink{class_zipcode}{Zipcode}}}]{z\+Array\mbox{[}$\,$\mbox{]},  }\item[{int}]{z\+Size,  }\item[{std\+::string}]{h\+Array\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+output\+CSV 
+\begin{DoxyParams}{Parameters}
+{\em string} & output\+File\+Name \\
+\hline
+{\em string} & PKIoutput\+File\+Name \\
+\hline
+{\em \mbox{\hyperlink{class_delim_text_buffer}{Delim\+Text\+Buffer}}} & Out\+Buff \\
+\hline
+{\em \mbox{\hyperlink{class_zipcode}{Zipcode}}} & array z\+Array \\
+\hline
+{\em int} & z\+Size \\
+\hline
+{\em string} & array h\+Array \\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondition}
+a Delimt\+Text\+Buffer, and a filled array of zipcodes must exist 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+the zipcode array is packed into the buffer and written to the given output\+File\+Name file after the given h\+Array header record is written. A pki file is generated with the name PKIoutput\+File\+Name. 
+\end{DoxyPostcond}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_proj4__group5_8cpp_afaf32063c880d9fff26db31431c33bbc_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=244pt]{_proj4__group5_8cpp_afaf32063c880d9fff26db31431c33bbc_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{_proj4__group5_8cpp_aa13f04e5e2bbc6eedf108bfb8b9c802e}\label{_proj4__group5_8cpp_aa13f04e5e2bbc6eedf108bfb8b9c802e}} 
+\index{Proj4\_group5.cpp@{Proj4\_group5.cpp}!outputRandomColumnCSV@{outputRandomColumnCSV}}
+\index{outputRandomColumnCSV@{outputRandomColumnCSV}!Proj4\_group5.cpp@{Proj4\_group5.cpp}}
+\doxysubsubsection{\texorpdfstring{outputRandomColumnCSV()}{outputRandomColumnCSV()}}
+{\footnotesize\ttfamily void output\+Random\+Column\+CSV (\begin{DoxyParamCaption}\item[{std\+::string}]{output\+File\+Name,  }\item[{std\+::string}]{PKIoutput\+File\+Name,  }\item[{\mbox{\hyperlink{class_delim_text_buffer}{Delim\+Text\+Buffer}}}]{Out\+Buff,  }\item[{\mbox{\hyperlink{class_zipcode}{Zipcode}}}]{z\+Array\mbox{[}$\,$\mbox{]},  }\item[{int}]{z\+Size,  }\item[{std\+::string}]{h\+Array\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+output\+Random\+Column\+CSV 
+\begin{DoxyParams}{Parameters}
+{\em string} & output\+File\+Name \\
+\hline
+{\em string} & PKIoutput\+File\+Name \\
+\hline
+{\em \mbox{\hyperlink{class_delim_text_buffer}{Delim\+Text\+Buffer}}} & Out\+Buff \\
+\hline
+{\em \mbox{\hyperlink{class_zipcode}{Zipcode}}} & array z\+Array \\
+\hline
+{\em int} & z\+Size \\
+\hline
+{\em string} & array h\+Array \\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondition}
+a Delimt\+Text\+Buffer, and a filled array of zipcodes must exist 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+the zipcode array is packed into the buffer randomly and written to the given output\+File\+Name file after the given h\+Array header record is written. A pki file is generated with the name PKIoutput\+File\+Name. 
+\end{DoxyPostcond}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_proj4__group5_8cpp_aa13f04e5e2bbc6eedf108bfb8b9c802e_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=314pt]{_proj4__group5_8cpp_aa13f04e5e2bbc6eedf108bfb8b9c802e_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{_proj4__group5_8cpp_a8577da1adb2fb8e19116b48e817ddfb1}\label{_proj4__group5_8cpp_a8577da1adb2fb8e19116b48e817ddfb1}} 
+\index{Proj4\_group5.cpp@{Proj4\_group5.cpp}!outputTable@{outputTable}}
+\index{outputTable@{outputTable}!Proj4\_group5.cpp@{Proj4\_group5.cpp}}
+\doxysubsubsection{\texorpdfstring{outputTable()}{outputTable()}}
+{\footnotesize\ttfamily void output\+Table (\begin{DoxyParamCaption}\item[{std\+::string}]{output\+File\+Name,  }\item[{\mbox{\hyperlink{class_delim_text_buffer}{Delim\+Text\+Buffer}}}]{Out\+Buff,  }\item[{\mbox{\hyperlink{class_state}{State}}}]{s\+Array\mbox{[}$\,$\mbox{]},  }\item[{int}]{s\+Array\+Size }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=299pt]{_proj4__group5_8cpp_a8577da1adb2fb8e19116b48e817ddfb1_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{_proj4__group5_8cpp_a50243468f4a46ee95c60495dd153e096}\label{_proj4__group5_8cpp_a50243468f4a46ee95c60495dd153e096}} 
+\index{Proj4\_group5.cpp@{Proj4\_group5.cpp}!packHeader@{packHeader}}
+\index{packHeader@{packHeader}!Proj4\_group5.cpp@{Proj4\_group5.cpp}}
+\doxysubsubsection{\texorpdfstring{packHeader()}{packHeader()}}
+{\footnotesize\ttfamily int pack\+Header (\begin{DoxyParamCaption}\item[{std\+::string}]{output\+File\+Name,  }\item[{\mbox{\hyperlink{class_delim_text_buffer}{Delim\+Text\+Buffer}}}]{Out\+Buff,  }\item[{std\+::string}]{h\+Array\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+pack\+Header 
+\begin{DoxyParams}{Parameters}
+{\em string} & output\+File\+Name \\
+\hline
+{\em \mbox{\hyperlink{class_delim_text_buffer}{Delim\+Text\+Buffer}}} & Out\+Buff \\
+\hline
+{\em string} & array h\+Array \\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondition}
+a \mbox{\hyperlink{class_delim_text_buffer}{Delim\+Text\+Buffer}} object must exist 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+the given h\+Array is packed with header record from given output\+File\+Name file 
+\end{DoxyPostcond}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=332pt]{_proj4__group5_8cpp_a50243468f4a46ee95c60495dd153e096_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_proj4__group5_8cpp_a50243468f4a46ee95c60495dd153e096_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{_proj4__group5_8cpp_afe493882bd9327c0e2b0808f89ada9d6}\label{_proj4__group5_8cpp_afe493882bd9327c0e2b0808f89ada9d6}} 
+\index{Proj4\_group5.cpp@{Proj4\_group5.cpp}!readFileNoHeaderLength@{readFileNoHeaderLength}}
+\index{readFileNoHeaderLength@{readFileNoHeaderLength}!Proj4\_group5.cpp@{Proj4\_group5.cpp}}
+\doxysubsubsection{\texorpdfstring{readFileNoHeaderLength()}{readFileNoHeaderLength()}}
+{\footnotesize\ttfamily int read\+File\+No\+Header\+Length (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_zipcode}{Zipcode}}}]{z\+Array\mbox{[}$\,$\mbox{]},  }\item[{\mbox{\hyperlink{class_delim_text_buffer}{Delim\+Text\+Buffer}}}]{In\+Buff,  }\item[{std\+::string}]{In\+File\+Name }\end{DoxyParamCaption})}
+
+read\+File\+No\+Header\+Length 
+\begin{DoxyParams}{Parameters}
+{\em \mbox{\hyperlink{class_zipcode}{Zipcode}}} & array z\+Array \\
+\hline
+{\em \mbox{\hyperlink{class_delim_text_buffer}{Delim\+Text\+Buffer}}} & In\+Buff \\
+\hline
+{\em string} & In\+File\+Name \\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondition}
+a \mbox{\hyperlink{class_delim_text_buffer}{Delim\+Text\+Buffer}} object must exist 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+the given file In\+File\+Name is opened and the file is read into the In\+Buff buffer. The contents of the buffer are then unpacked into z\+Array 
+\end{DoxyPostcond}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_proj4__group5_8cpp_afe493882bd9327c0e2b0808f89ada9d6_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{_proj4__group5_8cpp_a2c613cc04ac292e3fcbb341a301bfcc4}\label{_proj4__group5_8cpp_a2c613cc04ac292e3fcbb341a301bfcc4}} 
+\index{Proj4\_group5.cpp@{Proj4\_group5.cpp}!readFileWithHeaderLength@{readFileWithHeaderLength}}
+\index{readFileWithHeaderLength@{readFileWithHeaderLength}!Proj4\_group5.cpp@{Proj4\_group5.cpp}}
+\doxysubsubsection{\texorpdfstring{readFileWithHeaderLength()}{readFileWithHeaderLength()}}
+{\footnotesize\ttfamily int read\+File\+With\+Header\+Length (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_zipcode}{Zipcode}}}]{z\+Array\mbox{[}$\,$\mbox{]},  }\item[{\mbox{\hyperlink{class_delim_text_buffer}{Delim\+Text\+Buffer}}}]{In\+Buff,  }\item[{std\+::string}]{In\+File\+Name }\end{DoxyParamCaption})}
+
+read\+File\+With\+Header\+Length 
+\begin{DoxyParams}{Parameters}
+{\em \mbox{\hyperlink{class_zipcode}{Zipcode}}} & array z\+Array \\
+\hline
+{\em \mbox{\hyperlink{class_delim_text_buffer}{Delim\+Text\+Buffer}}} & In\+Buff \\
+\hline
+{\em string} & In\+File\+Name \\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondition}
+a \mbox{\hyperlink{class_delim_text_buffer}{Delim\+Text\+Buffer}} object must exist 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+the given file In\+File\+Name is opened and the header is unpacked into header\+Array then the rest of the file is read into the In\+Buff buffer. The contents of the buffer are then unpacked into z\+Array 
+\end{DoxyPostcond}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_proj4__group5_8cpp_a2c613cc04ac292e3fcbb341a301bfcc4_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=311pt]{_proj4__group5_8cpp_a2c613cc04ac292e3fcbb341a301bfcc4_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{_proj4__group5_8cpp_a4e337a3ca86f08df3f11fdcc3d7a8fc9}\label{_proj4__group5_8cpp_a4e337a3ca86f08df3f11fdcc3d7a8fc9}} 
+\index{Proj4\_group5.cpp@{Proj4\_group5.cpp}!readPKI@{readPKI}}
+\index{readPKI@{readPKI}!Proj4\_group5.cpp@{Proj4\_group5.cpp}}
+\doxysubsubsection{\texorpdfstring{readPKI()}{readPKI()}}
+{\footnotesize\ttfamily int read\+PKI (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_p_k_i_struct}{PKIStruct}}}]{p\+Array\mbox{[}$\,$\mbox{]},  }\item[{std\+::string}]{PKIFile\+Name }\end{DoxyParamCaption})}
+
+read\+PKI 
+\begin{DoxyParams}{Parameters}
+{\em \mbox{\hyperlink{struct_p_k_i_struct}{PKIStruct}}} & array p\+Array \\
+\hline
+{\em string} & PKIFile\+Name \\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondition}
+none 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+the given PKIFile\+Name file is opened and the header is read in and the rest of the contents are read and put into p\+Array 
+\end{DoxyPostcond}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=231pt]{_proj4__group5_8cpp_a4e337a3ca86f08df3f11fdcc3d7a8fc9_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{_proj4__group5_8cpp_a967ffd75b5a2f2de4d2468ab45162803}\label{_proj4__group5_8cpp_a967ffd75b5a2f2de4d2468ab45162803}} 
+\index{Proj4\_group5.cpp@{Proj4\_group5.cpp}!searchPKI@{searchPKI}}
+\index{searchPKI@{searchPKI}!Proj4\_group5.cpp@{Proj4\_group5.cpp}}
+\doxysubsubsection{\texorpdfstring{searchPKI()}{searchPKI()}}
+{\footnotesize\ttfamily void search\+PKI (\begin{DoxyParamCaption}\item[{int}]{z\+Index,  }\item[{int}]{p\+Index,  }\item[{int}]{argc,  }\item[{char $\ast$$\ast$}]{argv,  }\item[{\mbox{\hyperlink{class_zipcode}{Zipcode}}}]{z\+Array\mbox{[}$\,$\mbox{]},  }\item[{\mbox{\hyperlink{struct_p_k_i_struct}{PKIStruct}}}]{p\+Array\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+search\+PKI 
+\begin{DoxyParams}{Parameters}
+{\em int} & z\+Index \\
+\hline
+{\em int} & p\+Index \\
+\hline
+{\em int} & argc \\
+\hline
+{\em cstyle} & string argv \\
+\hline
+{\em \mbox{\hyperlink{class_zipcode}{Zipcode}}} & array z\+Array \\
+\hline
+{\em \mbox{\hyperlink{struct_p_k_i_struct}{PKIStruct}}} & array p\+Array \\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondition}
+a filled \mbox{\hyperlink{class_zipcode}{Zipcode}} array and filled \mbox{\hyperlink{struct_p_k_i_struct}{PKIStruct}} array must exist 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+the given p\+Array is sequntially search for given argv values. If found it outputs a message to the CLI and if not found it outputs a message to the CLI. 
+\end{DoxyPostcond}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=255pt]{_proj4__group5_8cpp_a967ffd75b5a2f2de4d2468ab45162803_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=241pt]{_proj4__group5_8cpp_a967ffd75b5a2f2de4d2468ab45162803_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{_proj4__group5_8cpp_a7dfc14b1019d1c7e3652f86f079bac55}\label{_proj4__group5_8cpp_a7dfc14b1019d1c7e3652f86f079bac55}} 
+\index{Proj4\_group5.cpp@{Proj4\_group5.cpp}!setZipCodes@{setZipCodes}}
+\index{setZipCodes@{setZipCodes}!Proj4\_group5.cpp@{Proj4\_group5.cpp}}
+\doxysubsubsection{\texorpdfstring{setZipCodes()}{setZipCodes()}}
+{\footnotesize\ttfamily void set\+Zip\+Codes (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_state}{State}}}]{s\+Array\mbox{[}$\,$\mbox{]},  }\item[{\mbox{\hyperlink{class_zipcode}{Zipcode}}}]{z\+Array\mbox{[}$\,$\mbox{]},  }\item[{int}]{z\+Array\+Size }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{_proj4__group5_8cpp_ac599327475e8453f040d265d6607e278}\label{_proj4__group5_8cpp_ac599327475e8453f040d265d6607e278}} 
+\index{Proj4\_group5.cpp@{Proj4\_group5.cpp}!columnOrderArray@{columnOrderArray}}
+\index{columnOrderArray@{columnOrderArray}!Proj4\_group5.cpp@{Proj4\_group5.cpp}}
+\doxysubsubsection{\texorpdfstring{columnOrderArray}{columnOrderArray}}
+{\footnotesize\ttfamily std\+::string column\+Order\+Array\mbox{[}6\mbox{]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\{}
+\DoxyCodeLine{\ \ \ \ \textcolor{stringliteral}{"{}ZipCode"{}},\ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\ \ \ \ \textcolor{stringliteral}{"{}PlaceName"{}},\ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\ \ \ \ \textcolor{stringliteral}{"{}State"{}},\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\ \ \ \ \textcolor{stringliteral}{"{}County"{}},\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\ \ \ \ \textcolor{stringliteral}{"{}Lat"{}},\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\ \ \ \ \textcolor{stringliteral}{"{}Long"{}},\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{_proj4__group5_8cpp_a3b271a1d9e718093778ca113148e809a}\label{_proj4__group5_8cpp_a3b271a1d9e718093778ca113148e809a}} 
+\index{Proj4\_group5.cpp@{Proj4\_group5.cpp}!headerArray@{headerArray}}
+\index{headerArray@{headerArray}!Proj4\_group5.cpp@{Proj4\_group5.cpp}}
+\doxysubsubsection{\texorpdfstring{headerArray}{headerArray}}
+{\footnotesize\ttfamily std\+::string header\+Array\mbox{[}HEADER\+\_\+\+FIELDS\mbox{]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \{}
+\DoxyCodeLine{\ \ \ \ \textcolor{stringliteral}{"{}RecordSize"{}},\ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\ \ \ \ \textcolor{stringliteral}{"{}ZipCode"{}},\ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\ \ \ \ \textcolor{stringliteral}{"{}PlaceName"{}},\ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\ \ \ \ \textcolor{stringliteral}{"{}State"{}},\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\ \ \ \ \textcolor{stringliteral}{"{}County"{}},\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\ \ \ \ \textcolor{stringliteral}{"{}Lat"{}},\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\ \ \ \ \textcolor{stringliteral}{"{}Long"{}},\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\ \ \ \ \textcolor{stringliteral}{"{}HeaderRecordSize"{}},\ \ \ \ \ }
+\DoxyCodeLine{\ \ \ \ \textcolor{stringliteral}{"{}FileType=CSV"{}},\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\ \ \ \ \textcolor{stringliteral}{"{}Version=1.0"{}},\ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\ \ \ \ \textcolor{stringliteral}{"{}SizeType=ASCII"{}},\ \ \ \ \ \ \ }
+\DoxyCodeLine{\ \ \ \ \textcolor{stringliteral}{"{}IndexFileName"{}},\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\ \ \ \ \textcolor{stringliteral}{"{}PKISchema=CSV"{}},\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\ \ \ \ \textcolor{stringliteral}{"{}RecordCount=10"{}},\ \ \ \ \ \ \ }
+\DoxyCodeLine{\ \ \ \ \textcolor{stringliteral}{"{}FieldsPerRecord=5"{}},\ \ \ \ }
+\DoxyCodeLine{\ \ \ \ \textcolor{stringliteral}{"{}PKIFormat=PKI,Index"{}}\ \ \ }
+\DoxyCodeLine{\ \ \ \ \textcolor{stringliteral}{"{}EndOfHeaderRecord"{}}\ \ \ \ \ }
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}

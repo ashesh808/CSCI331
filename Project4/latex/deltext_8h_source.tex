@@ -1,0 +1,61 @@
+\hypertarget{deltext_8h_source}{}\doxysection{deltext.\+h}
+\mbox{\hyperlink{deltext_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#ifndef\ DELTEXT\_H}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#define\ DELTEXT\_H}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{comment}{/*provides\ ostream\ and\ istream*/}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00007\ \textcolor{comment}{/*provides\ use\ of\ c++\ strings*/}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#ifndef\ FALSE}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#define\ FALSE\ (0)}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#define\ TRUE\ (1)}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_delim_text_buffer}{DelimTextBuffer}}}
+\DoxyCodeLine{00016\ \textcolor{comment}{//\ a\ buffer\ which\ holds\ delimited\ text\ fields.}}
+\DoxyCodeLine{00017\ \textcolor{comment}{//\ Record\ variables\ can\ be\ packed\ into\ and\ extracted\ from\ a\ buffer.}}
+\DoxyCodeLine{00018\ \{}
+\DoxyCodeLine{00019\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00026\ \ \ \ \ \mbox{\hyperlink{class_delim_text_buffer}{DelimTextBuffer}}(\textcolor{keywordtype}{char}\ \mbox{\hyperlink{class_delim_text_buffer_a7da7c87019725e7e83c239ea70ef3291}{Delim}}\ =\ \textcolor{charliteral}{','},\ \textcolor{keywordtype}{int}\ maxBytes\ =\ 10000);}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_delim_text_buffer_a1b2302d7f44cbc747062253ef6110261}{Clear}}();\ \textcolor{comment}{//\ clear\ fields\ from\ buffer}}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_delim_text_buffer_a1f711c247290a4b61ea9ffad48817a22}{Read}}(std::istream\ \&);}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_delim_text_buffer_acff0ffd523fc2bca38a6c275dd13bad4}{ReadHeader}}(std::istream\ \&);}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00058\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_delim_text_buffer_acfe068f80e6cf773abb66ef58f603caf}{Pack}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *,\ \textcolor{keywordtype}{int}\ size\ =\ -\/1);}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00066\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_delim_text_buffer_a54a8ac1fc30f5d2d7f73ba269c6680bf}{Unpack}}(\textcolor{keywordtype}{char}\ *);}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00074\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_delim_text_buffer_a5f4694cba177f8bc9757df1641a26cf7}{PackHeader}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *,\ \textcolor{keywordtype}{int}\ size\ =\ -\/1);}
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00081\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_delim_text_buffer_a338e8e6476387168f2ddf0c8c441a10d}{UnpackHeader}}(\textcolor{keywordtype}{char}\ *);}
+\DoxyCodeLine{00082\ }
+\DoxyCodeLine{00090\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_delim_text_buffer_a978c7d99cc0b42d6ad4d91e3e0125af4}{Init}}(\textcolor{keywordtype}{char}\ delim,\ \textcolor{keywordtype}{int}\ maxBytes\ =\ 10000);}
+\DoxyCodeLine{00091\ }
+\DoxyCodeLine{00100\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_delim_text_buffer_a71a00002bbf54b5304feac2e48c469ac}{Print}}(std::ostream\ \&)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00101\ }
+\DoxyCodeLine{00108\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_delim_text_buffer_a21d0b159e2e8d6acb5ccbf3e66bc60b4}{Write}}(std::ostream\ \&)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00109\ }
+\DoxyCodeLine{00116\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_delim_text_buffer_a4571ae42e81caae0791f74c7068e23a3}{WriteHeader}}(std::ostream\ \&)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00117\ }
+\DoxyCodeLine{00118\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00120\ \ \ \ \ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{class_delim_text_buffer_a7da7c87019725e7e83c239ea70ef3291}{Delim}};}
+\DoxyCodeLine{00122\ \ \ \ \ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{class_delim_text_buffer_a9a0274a4032e46e9abf0d892cdd1e6b3}{DelimStr}}[3];}
+\DoxyCodeLine{00124\ \ \ \ \ \textcolor{keywordtype}{char}\ *\mbox{\hyperlink{class_delim_text_buffer_a7220844bd0855645879719fe8bfc6682}{Buffer}};}
+\DoxyCodeLine{00126\ \ \ \ \ std::string\ \mbox{\hyperlink{class_delim_text_buffer_aa5a3c3e852bcbca93d49e3442e811e7f}{Rbuffer}};}
+\DoxyCodeLine{00128\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_delim_text_buffer_af64eab5876f13c0b7f2250f545d1b703}{BufferSize}};}
+\DoxyCodeLine{00130\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_delim_text_buffer_aae8d30712833b615d3295ba3df336d9f}{MaxBytes}};}
+\DoxyCodeLine{00132\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_delim_text_buffer_ad9c5fb63571ea65334b0c513e3a272d8}{NextByte}};}
+\DoxyCodeLine{00134\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_delim_text_buffer_ad29edb6b10720be51a93e47078b0df58}{count}};}
+\DoxyCodeLine{00135\ \};}
+\DoxyCodeLine{00136\ }
+\DoxyCodeLine{00137\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{deltext_8cpp}{deltext.cpp}}"{}}}
+\DoxyCodeLine{00138\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

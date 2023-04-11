@@ -1,0 +1,387 @@
+\hypertarget{class_delim_text_buffer}{}\doxysection{Delim\+Text\+Buffer Class Reference}
+\label{class_delim_text_buffer}\index{DelimTextBuffer@{DelimTextBuffer}}
+
+
+{\ttfamily \#include $<$deltext.\+h$>$}
+
+
+
+Collaboration diagram for Delim\+Text\+Buffer\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=182pt]{class_delim_text_buffer__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_delim_text_buffer_abd3083eba20b7bde4bce6a2be45d151e}{Delim\+Text\+Buffer}} (char \mbox{\hyperlink{class_delim_text_buffer_a7da7c87019725e7e83c239ea70ef3291}{Delim}}=\textquotesingle{},\textquotesingle{}, int max\+Bytes=10000)
+\item 
+void \mbox{\hyperlink{class_delim_text_buffer_a1b2302d7f44cbc747062253ef6110261}{Clear}} ()
+\item 
+int \mbox{\hyperlink{class_delim_text_buffer_a1f711c247290a4b61ea9ffad48817a22}{Read}} (std\+::istream \&)
+\item 
+int \mbox{\hyperlink{class_delim_text_buffer_acff0ffd523fc2bca38a6c275dd13bad4}{Read\+Header}} (std\+::istream \&)
+\item 
+int \mbox{\hyperlink{class_delim_text_buffer_acfe068f80e6cf773abb66ef58f603caf}{Pack}} (const char $\ast$, int size=-\/1)
+\item 
+int \mbox{\hyperlink{class_delim_text_buffer_a54a8ac1fc30f5d2d7f73ba269c6680bf}{Unpack}} (char $\ast$)
+\item 
+int \mbox{\hyperlink{class_delim_text_buffer_a5f4694cba177f8bc9757df1641a26cf7}{Pack\+Header}} (const char $\ast$, int size=-\/1)
+\item 
+int \mbox{\hyperlink{class_delim_text_buffer_a338e8e6476387168f2ddf0c8c441a10d}{Unpack\+Header}} (char $\ast$)
+\item 
+int \mbox{\hyperlink{class_delim_text_buffer_a978c7d99cc0b42d6ad4d91e3e0125af4}{Init}} (char delim, int max\+Bytes=10000)
+\item 
+void \mbox{\hyperlink{class_delim_text_buffer_a71a00002bbf54b5304feac2e48c469ac}{Print}} (std\+::ostream \&) const
+\item 
+int \mbox{\hyperlink{class_delim_text_buffer_a21d0b159e2e8d6acb5ccbf3e66bc60b4}{Write}} (std\+::ostream \&) const
+\item 
+int \mbox{\hyperlink{class_delim_text_buffer_a4571ae42e81caae0791f74c7068e23a3}{Write\+Header}} (std\+::ostream \&) const
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+char \mbox{\hyperlink{class_delim_text_buffer_a7da7c87019725e7e83c239ea70ef3291}{Delim}}
+\item 
+char \mbox{\hyperlink{class_delim_text_buffer_a9a0274a4032e46e9abf0d892cdd1e6b3}{Delim\+Str}} \mbox{[}3\mbox{]}
+\item 
+char $\ast$ \mbox{\hyperlink{class_delim_text_buffer_a7220844bd0855645879719fe8bfc6682}{Buffer}}
+\item 
+std\+::string \mbox{\hyperlink{class_delim_text_buffer_aa5a3c3e852bcbca93d49e3442e811e7f}{Rbuffer}}
+\item 
+int \mbox{\hyperlink{class_delim_text_buffer_af64eab5876f13c0b7f2250f545d1b703}{Buffer\+Size}}
+\item 
+int \mbox{\hyperlink{class_delim_text_buffer_aae8d30712833b615d3295ba3df336d9f}{Max\+Bytes}}
+\item 
+int \mbox{\hyperlink{class_delim_text_buffer_ad9c5fb63571ea65334b0c513e3a272d8}{Next\+Byte}}
+\item 
+int \mbox{\hyperlink{class_delim_text_buffer_ad29edb6b10720be51a93e47078b0df58}{count}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_delim_text_buffer_abd3083eba20b7bde4bce6a2be45d151e}\label{class_delim_text_buffer_abd3083eba20b7bde4bce6a2be45d151e}} 
+\index{DelimTextBuffer@{DelimTextBuffer}!DelimTextBuffer@{DelimTextBuffer}}
+\index{DelimTextBuffer@{DelimTextBuffer}!DelimTextBuffer@{DelimTextBuffer}}
+\doxysubsubsection{\texorpdfstring{DelimTextBuffer()}{DelimTextBuffer()}}
+{\footnotesize\ttfamily Delim\+Text\+Buffer\+::\+Delim\+Text\+Buffer (\begin{DoxyParamCaption}\item[{char}]{Delim = {\ttfamily \textquotesingle{},\textquotesingle{}},  }\item[{int}]{max\+Bytes = {\ttfamily 10000} }\end{DoxyParamCaption})}
+
+Constructor; 
+\begin{DoxyParams}{Parameters}
+{\em Delim} & the delimiter character to be used \\
+\hline
+{\em max\+Bytes} & maximum number of characters in the buffer \\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondition}
+none 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+a buffer of size max\+Bytes is created with Delim as the delimiter 
+\end{DoxyPostcond}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_delim_text_buffer_a1b2302d7f44cbc747062253ef6110261}\label{class_delim_text_buffer_a1b2302d7f44cbc747062253ef6110261}} 
+\index{DelimTextBuffer@{DelimTextBuffer}!Clear@{Clear}}
+\index{Clear@{Clear}!DelimTextBuffer@{DelimTextBuffer}}
+\doxysubsubsection{\texorpdfstring{Clear()}{Clear()}}
+{\footnotesize\ttfamily void Delim\+Text\+Buffer\+::\+Clear (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+MODIFICATION MEMBER FUNCTIONS Clear; Clear fields from buffer \begin{DoxyPrecond}{Precondition}
+a \mbox{\hyperlink{class_delim_text_buffer}{Delim\+Text\+Buffer}} must exist 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+the fields in the buffer are empty 
+\end{DoxyPostcond}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_delim_text_buffer_a1b2302d7f44cbc747062253ef6110261_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_delim_text_buffer_a978c7d99cc0b42d6ad4d91e3e0125af4}\label{class_delim_text_buffer_a978c7d99cc0b42d6ad4d91e3e0125af4}} 
+\index{DelimTextBuffer@{DelimTextBuffer}!Init@{Init}}
+\index{Init@{Init}!DelimTextBuffer@{DelimTextBuffer}}
+\doxysubsubsection{\texorpdfstring{Init()}{Init()}}
+{\footnotesize\ttfamily int Delim\+Text\+Buffer\+::\+Init (\begin{DoxyParamCaption}\item[{char}]{delim,  }\item[{int}]{max\+Bytes = {\ttfamily 10000} }\end{DoxyParamCaption})}
+
+Init Initalize the buffer 
+\begin{DoxyParams}{Parameters}
+{\em delim} & a character delimiter for the buffer \\
+\hline
+{\em max\+Bytes} & the maximum number of characters in the buffer(default 10000) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondition}
+a \mbox{\hyperlink{class_delim_text_buffer}{Delim\+Text\+Buffer}} must exist 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+the buffer is inialized to have delim as the delimiter and a max\+Bytes of maximum characters 
+\end{DoxyPostcond}
+\mbox{\Hypertarget{class_delim_text_buffer_acfe068f80e6cf773abb66ef58f603caf}\label{class_delim_text_buffer_acfe068f80e6cf773abb66ef58f603caf}} 
+\index{DelimTextBuffer@{DelimTextBuffer}!Pack@{Pack}}
+\index{Pack@{Pack}!DelimTextBuffer@{DelimTextBuffer}}
+\doxysubsubsection{\texorpdfstring{Pack()}{Pack()}}
+{\footnotesize\ttfamily int Delim\+Text\+Buffer\+::\+Pack (\begin{DoxyParamCaption}\item[{const char $\ast$}]{str,  }\item[{int}]{size = {\ttfamily -\/1} }\end{DoxyParamCaption})}
+
+Pack; Packs the next value into a c style string 
+\begin{DoxyParams}{Parameters}
+{\em a} & c style string \\
+\hline
+{\em size} & of the c style string \\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondition}
+a \mbox{\hyperlink{class_delim_text_buffer}{Delim\+Text\+Buffer}} must exist 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+a c style string is packed from the buffer 
+\end{DoxyPostcond}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_delim_text_buffer_acfe068f80e6cf773abb66ef58f603caf_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_delim_text_buffer_a5f4694cba177f8bc9757df1641a26cf7}\label{class_delim_text_buffer_a5f4694cba177f8bc9757df1641a26cf7}} 
+\index{DelimTextBuffer@{DelimTextBuffer}!PackHeader@{PackHeader}}
+\index{PackHeader@{PackHeader}!DelimTextBuffer@{DelimTextBuffer}}
+\doxysubsubsection{\texorpdfstring{PackHeader()}{PackHeader()}}
+{\footnotesize\ttfamily int Delim\+Text\+Buffer\+::\+Pack\+Header (\begin{DoxyParamCaption}\item[{const char $\ast$}]{str,  }\item[{int}]{size = {\ttfamily -\/1} }\end{DoxyParamCaption})}
+
+Pack\+Header Packs the header data into a character buffer. 
+\begin{DoxyParams}{Parameters}
+{\em data} & a pointer to the character buffer to store the packed data \\
+\hline
+{\em size} & the size of the buffer, defaults to -\/1 to indicate that the buffer size should be calculated \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+an integer value indicating the number of bytes written to the buffer 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_delim_text_buffer_a5f4694cba177f8bc9757df1641a26cf7_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_delim_text_buffer_a71a00002bbf54b5304feac2e48c469ac}\label{class_delim_text_buffer_a71a00002bbf54b5304feac2e48c469ac}} 
+\index{DelimTextBuffer@{DelimTextBuffer}!Print@{Print}}
+\index{Print@{Print}!DelimTextBuffer@{DelimTextBuffer}}
+\doxysubsubsection{\texorpdfstring{Print()}{Print()}}
+{\footnotesize\ttfamily void Delim\+Text\+Buffer\+::\+Print (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{stream }\end{DoxyParamCaption}) const}
+
+NONMODIFICATION MEMBER FUNCTIONS Print; Prints the maximum size and characters for the buffer 
+\begin{DoxyParams}{Parameters}
+{\em ostream} & object \\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondition}
+a \mbox{\hyperlink{class_delim_text_buffer}{Delim\+Text\+Buffer}} must exist 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+the maximum size and characters for the buffer are written to an ostream object 
+\end{DoxyPostcond}
+\mbox{\Hypertarget{class_delim_text_buffer_a1f711c247290a4b61ea9ffad48817a22}\label{class_delim_text_buffer_a1f711c247290a4b61ea9ffad48817a22}} 
+\index{DelimTextBuffer@{DelimTextBuffer}!Read@{Read}}
+\index{Read@{Read}!DelimTextBuffer@{DelimTextBuffer}}
+\doxysubsubsection{\texorpdfstring{Read()}{Read()}}
+{\footnotesize\ttfamily int Delim\+Text\+Buffer\+::\+Read (\begin{DoxyParamCaption}\item[{std\+::istream \&}]{stream }\end{DoxyParamCaption})}
+
+Read; Reads into the buffer from an istream object 
+\begin{DoxyParams}{Parameters}
+{\em istream} & object \\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondition}
+a \mbox{\hyperlink{class_delim_text_buffer}{Delim\+Text\+Buffer}} must exsist 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+a single line from an istream object is read into the buffer 
+\end{DoxyPostcond}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_delim_text_buffer_a1f711c247290a4b61ea9ffad48817a22_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_delim_text_buffer_acff0ffd523fc2bca38a6c275dd13bad4}\label{class_delim_text_buffer_acff0ffd523fc2bca38a6c275dd13bad4}} 
+\index{DelimTextBuffer@{DelimTextBuffer}!ReadHeader@{ReadHeader}}
+\index{ReadHeader@{ReadHeader}!DelimTextBuffer@{DelimTextBuffer}}
+\doxysubsubsection{\texorpdfstring{ReadHeader()}{ReadHeader()}}
+{\footnotesize\ttfamily int Delim\+Text\+Buffer\+::\+Read\+Header (\begin{DoxyParamCaption}\item[{std\+::istream \&}]{stream }\end{DoxyParamCaption})}
+
+Read Header Reads the header of an input stream. 
+\begin{DoxyParams}{Parameters}
+{\em input} & the input stream to read from \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+an integer value indicating success or failure 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_delim_text_buffer_acff0ffd523fc2bca38a6c275dd13bad4_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_delim_text_buffer_acff0ffd523fc2bca38a6c275dd13bad4_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_delim_text_buffer_a54a8ac1fc30f5d2d7f73ba269c6680bf}\label{class_delim_text_buffer_a54a8ac1fc30f5d2d7f73ba269c6680bf}} 
+\index{DelimTextBuffer@{DelimTextBuffer}!Unpack@{Unpack}}
+\index{Unpack@{Unpack}!DelimTextBuffer@{DelimTextBuffer}}
+\doxysubsubsection{\texorpdfstring{Unpack()}{Unpack()}}
+{\footnotesize\ttfamily int Delim\+Text\+Buffer\+::\+Unpack (\begin{DoxyParamCaption}\item[{char $\ast$}]{str }\end{DoxyParamCaption})}
+
+Unpack; Unpacks a c style string into the buffer 
+\begin{DoxyParams}{Parameters}
+{\em a} & c style string \\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondition}
+a \mbox{\hyperlink{class_delim_text_buffer}{Delim\+Text\+Buffer}} must exist 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+a c style string is unpacked into the buffer 
+\end{DoxyPostcond}
+\mbox{\Hypertarget{class_delim_text_buffer_a338e8e6476387168f2ddf0c8c441a10d}\label{class_delim_text_buffer_a338e8e6476387168f2ddf0c8c441a10d}} 
+\index{DelimTextBuffer@{DelimTextBuffer}!UnpackHeader@{UnpackHeader}}
+\index{UnpackHeader@{UnpackHeader}!DelimTextBuffer@{DelimTextBuffer}}
+\doxysubsubsection{\texorpdfstring{UnpackHeader()}{UnpackHeader()}}
+{\footnotesize\ttfamily int Delim\+Text\+Buffer\+::\+Unpack\+Header (\begin{DoxyParamCaption}\item[{char $\ast$}]{str }\end{DoxyParamCaption})}
+
+Unpack\+Header; Unpacks the header data from a character buffer. 
+\begin{DoxyParams}{Parameters}
+{\em buffer} & a pointer to the character buffer containing the packed data \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+an integer value indicating the number of bytes read from the buffer 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_delim_text_buffer_a338e8e6476387168f2ddf0c8c441a10d_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_delim_text_buffer_a21d0b159e2e8d6acb5ccbf3e66bc60b4}\label{class_delim_text_buffer_a21d0b159e2e8d6acb5ccbf3e66bc60b4}} 
+\index{DelimTextBuffer@{DelimTextBuffer}!Write@{Write}}
+\index{Write@{Write}!DelimTextBuffer@{DelimTextBuffer}}
+\doxysubsubsection{\texorpdfstring{Write()}{Write()}}
+{\footnotesize\ttfamily int Delim\+Text\+Buffer\+::\+Write (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{stream }\end{DoxyParamCaption}) const}
+
+Write; Writes the entire buffer to an ostream object 
+\begin{DoxyParams}{Parameters}
+{\em ostream} & object \\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondition}
+a \mbox{\hyperlink{class_delim_text_buffer}{Delim\+Text\+Buffer}} must exist 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+the entire buffer is written into an ostream object with delimiters 
+\end{DoxyPostcond}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_delim_text_buffer_a21d0b159e2e8d6acb5ccbf3e66bc60b4_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_delim_text_buffer_a4571ae42e81caae0791f74c7068e23a3}\label{class_delim_text_buffer_a4571ae42e81caae0791f74c7068e23a3}} 
+\index{DelimTextBuffer@{DelimTextBuffer}!WriteHeader@{WriteHeader}}
+\index{WriteHeader@{WriteHeader}!DelimTextBuffer@{DelimTextBuffer}}
+\doxysubsubsection{\texorpdfstring{WriteHeader()}{WriteHeader()}}
+{\footnotesize\ttfamily int Delim\+Text\+Buffer\+::\+Write\+Header (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{stream }\end{DoxyParamCaption}) const}
+
+Write\+Header; Writes the header to an output stream. 
+\begin{DoxyParams}{Parameters}
+{\em output} & the output stream to write to \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+an integer value indicating success or failure 
+\end{DoxyReturn}
+\begin{DoxyPostcond}{Postcondition}
+a single line from an istream object is read into the buffer 
+\end{DoxyPostcond}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_delim_text_buffer_a7220844bd0855645879719fe8bfc6682}\label{class_delim_text_buffer_a7220844bd0855645879719fe8bfc6682}} 
+\index{DelimTextBuffer@{DelimTextBuffer}!Buffer@{Buffer}}
+\index{Buffer@{Buffer}!DelimTextBuffer@{DelimTextBuffer}}
+\doxysubsubsection{\texorpdfstring{Buffer}{Buffer}}
+{\footnotesize\ttfamily char$\ast$ Delim\+Text\+Buffer\+::\+Buffer\hspace{0.3cm}{\ttfamily [private]}}
+
+character array to hold field values \mbox{\Hypertarget{class_delim_text_buffer_af64eab5876f13c0b7f2250f545d1b703}\label{class_delim_text_buffer_af64eab5876f13c0b7f2250f545d1b703}} 
+\index{DelimTextBuffer@{DelimTextBuffer}!BufferSize@{BufferSize}}
+\index{BufferSize@{BufferSize}!DelimTextBuffer@{DelimTextBuffer}}
+\doxysubsubsection{\texorpdfstring{BufferSize}{BufferSize}}
+{\footnotesize\ttfamily int Delim\+Text\+Buffer\+::\+Buffer\+Size\hspace{0.3cm}{\ttfamily [private]}}
+
+size of packed fields \mbox{\Hypertarget{class_delim_text_buffer_ad29edb6b10720be51a93e47078b0df58}\label{class_delim_text_buffer_ad29edb6b10720be51a93e47078b0df58}} 
+\index{DelimTextBuffer@{DelimTextBuffer}!count@{count}}
+\index{count@{count}!DelimTextBuffer@{DelimTextBuffer}}
+\doxysubsubsection{\texorpdfstring{count}{count}}
+{\footnotesize\ttfamily int Delim\+Text\+Buffer\+::count\hspace{0.3cm}{\ttfamily [private]}}
+
+count if it is the end \mbox{\Hypertarget{class_delim_text_buffer_a7da7c87019725e7e83c239ea70ef3291}\label{class_delim_text_buffer_a7da7c87019725e7e83c239ea70ef3291}} 
+\index{DelimTextBuffer@{DelimTextBuffer}!Delim@{Delim}}
+\index{Delim@{Delim}!DelimTextBuffer@{DelimTextBuffer}}
+\doxysubsubsection{\texorpdfstring{Delim}{Delim}}
+{\footnotesize\ttfamily char Delim\+Text\+Buffer\+::\+Delim\hspace{0.3cm}{\ttfamily [private]}}
+
+delimiter character \mbox{\Hypertarget{class_delim_text_buffer_a9a0274a4032e46e9abf0d892cdd1e6b3}\label{class_delim_text_buffer_a9a0274a4032e46e9abf0d892cdd1e6b3}} 
+\index{DelimTextBuffer@{DelimTextBuffer}!DelimStr@{DelimStr}}
+\index{DelimStr@{DelimStr}!DelimTextBuffer@{DelimTextBuffer}}
+\doxysubsubsection{\texorpdfstring{DelimStr}{DelimStr}}
+{\footnotesize\ttfamily char Delim\+Text\+Buffer\+::\+Delim\+Str\mbox{[}3\mbox{]}\hspace{0.3cm}{\ttfamily [private]}}
+
+zero terminated string for Delim \mbox{\Hypertarget{class_delim_text_buffer_aae8d30712833b615d3295ba3df336d9f}\label{class_delim_text_buffer_aae8d30712833b615d3295ba3df336d9f}} 
+\index{DelimTextBuffer@{DelimTextBuffer}!MaxBytes@{MaxBytes}}
+\index{MaxBytes@{MaxBytes}!DelimTextBuffer@{DelimTextBuffer}}
+\doxysubsubsection{\texorpdfstring{MaxBytes}{MaxBytes}}
+{\footnotesize\ttfamily int Delim\+Text\+Buffer\+::\+Max\+Bytes\hspace{0.3cm}{\ttfamily [private]}}
+
+maximum number of characters in the buffer \mbox{\Hypertarget{class_delim_text_buffer_ad9c5fb63571ea65334b0c513e3a272d8}\label{class_delim_text_buffer_ad9c5fb63571ea65334b0c513e3a272d8}} 
+\index{DelimTextBuffer@{DelimTextBuffer}!NextByte@{NextByte}}
+\index{NextByte@{NextByte}!DelimTextBuffer@{DelimTextBuffer}}
+\doxysubsubsection{\texorpdfstring{NextByte}{NextByte}}
+{\footnotesize\ttfamily int Delim\+Text\+Buffer\+::\+Next\+Byte\hspace{0.3cm}{\ttfamily [private]}}
+
+packing/unpacking position in buffer \mbox{\Hypertarget{class_delim_text_buffer_aa5a3c3e852bcbca93d49e3442e811e7f}\label{class_delim_text_buffer_aa5a3c3e852bcbca93d49e3442e811e7f}} 
+\index{DelimTextBuffer@{DelimTextBuffer}!Rbuffer@{Rbuffer}}
+\index{Rbuffer@{Rbuffer}!DelimTextBuffer@{DelimTextBuffer}}
+\doxysubsubsection{\texorpdfstring{Rbuffer}{Rbuffer}}
+{\footnotesize\ttfamily std\+::string Delim\+Text\+Buffer\+::\+Rbuffer\hspace{0.3cm}{\ttfamily [private]}}
+
+string buffer 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{deltext_8h}{deltext.\+h}}\item 
+\mbox{\hyperlink{deltext_8cpp}{deltext.\+cpp}}\end{DoxyCompactItemize}

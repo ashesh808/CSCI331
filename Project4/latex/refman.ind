@@ -1,0 +1,271 @@
+\begin{theindex}
+
+  \item {application}
+    \subitem {Proj3\_group5.cpp}, \hyperpage{29}
+    \subitem {Proj4\_group5.cpp}, \hyperpage{35}
+
+  \indexspace
+
+  \item {Buffer}
+    \subitem {DelimTextBuffer}, \hyperpage{13}
+  \item {BufferSize}
+    \subitem {DelimTextBuffer}, \hyperpage{13}
+  \item {byteOffset}
+    \subitem {PKIStruct}, \hyperpage{15}
+
+  \indexspace
+
+  \item {Clear}
+    \subitem {DelimTextBuffer}, \hyperpage{7}
+    \subitem {Zipcode}, \hyperpage{19}
+  \item {Code}
+    \subitem {Zipcode}, \hyperpage{23}
+  \item {columnOrderArray}
+    \subitem {Proj4\_group5.cpp}, \hyperpage{46}
+  \item {compareStates}
+    \subitem {Proj3\_group5.cpp}, \hyperpage{30}
+    \subitem {Proj4\_group5.cpp}, \hyperpage{36}
+  \item {constructStateArray}
+    \subitem {Proj3\_group5.cpp}, \hyperpage{31}
+    \subitem {Proj4\_group5.cpp}, \hyperpage{36}
+  \item {count}
+    \subitem {DelimTextBuffer}, \hyperpage{13}
+  \item {County}
+    \subitem {Zipcode}, \hyperpage{23}
+
+  \indexspace
+
+  \item {Delim}
+    \subitem {DelimTextBuffer}, \hyperpage{13}
+  \item {DelimStr}
+    \subitem {DelimTextBuffer}, \hyperpage{13}
+  \item {DelimTextBuffer}, \hyperpage{5}
+    \subitem {Buffer}, \hyperpage{13}
+    \subitem {BufferSize}, \hyperpage{13}
+    \subitem {Clear}, \hyperpage{7}
+    \subitem {count}, \hyperpage{13}
+    \subitem {Delim}, \hyperpage{13}
+    \subitem {DelimStr}, \hyperpage{13}
+    \subitem {DelimTextBuffer}, \hyperpage{6}
+    \subitem {Init}, \hyperpage{7}
+    \subitem {MaxBytes}, \hyperpage{14}
+    \subitem {NextByte}, \hyperpage{14}
+    \subitem {Pack}, \hyperpage{8}
+    \subitem {PackHeader}, \hyperpage{8}
+    \subitem {Print}, \hyperpage{9}
+    \subitem {Rbuffer}, \hyperpage{14}
+    \subitem {Read}, \hyperpage{9}
+    \subitem {ReadHeader}, \hyperpage{10}
+    \subitem {Unpack}, \hyperpage{11}
+    \subitem {UnpackHeader}, \hyperpage{11}
+    \subitem {Write}, \hyperpage{12}
+    \subitem {WriteHeader}, \hyperpage{12}
+  \item {deltext.cpp}, \hyperpage{25}
+  \item {deltext.h}, \hyperpage{26}
+    \subitem {FALSE}, \hyperpage{27}
+    \subitem {TRUE}, \hyperpage{27}
+
+  \indexspace
+
+  \item {easternZipcode}
+    \subitem {State}, \hyperpage{16}
+
+  \indexspace
+
+  \item {FALSE}
+    \subitem {deltext.h}, \hyperpage{27}
+
+  \indexspace
+
+  \item {generateColumnOrder}
+    \subitem {Proj4\_group5.cpp}, \hyperpage{36}
+  \item {generatePKI}
+    \subitem {Proj4\_group5.cpp}, \hyperpage{37}
+  \item {generatePKIHeader}
+    \subitem {Proj4\_group5.cpp}, \hyperpage{37}
+
+  \indexspace
+
+  \item {headerArray}
+    \subitem {Proj4\_group5.cpp}, \hyperpage{46}
+
+  \indexspace
+
+  \item {Init}
+    \subitem {DelimTextBuffer}, \hyperpage{7}
+  \item {InitBuffer}
+    \subitem {Zipcode}, \hyperpage{19}
+
+  \indexspace
+
+  \item {largestLat}
+    \subitem {State}, \hyperpage{16}
+  \item {largestLong}
+    \subitem {State}, \hyperpage{16}
+  \item {Lat}
+    \subitem {Zipcode}, \hyperpage{23}
+  \item {Long}
+    \subitem {Zipcode}, \hyperpage{24}
+
+  \indexspace
+
+  \item {main}
+    \subitem {Proj3\_group5.cpp}, \hyperpage{31}
+    \subitem {Proj4\_group5.cpp}, \hyperpage{37}
+  \item {MaxBytes}
+    \subitem {DelimTextBuffer}, \hyperpage{14}
+  \item {myrandom}
+    \subitem {Proj4\_group5.cpp}, \hyperpage{38}
+
+  \indexspace
+
+  \item {NextByte}
+    \subitem {DelimTextBuffer}, \hyperpage{14}
+  \item {northernZipcode}
+    \subitem {State}, \hyperpage{16}
+
+  \indexspace
+
+  \item {outputCSV}
+    \subitem {Proj4\_group5.cpp}, \hyperpage{38}
+  \item {outputRandomColumnCSV}
+    \subitem {Proj4\_group5.cpp}, \hyperpage{39}
+  \item {outputTable}
+    \subitem {Proj3\_group5.cpp}, \hyperpage{32}
+    \subitem {Proj4\_group5.cpp}, \hyperpage{41}
+
+  \indexspace
+
+  \item {Pack}
+    \subitem {DelimTextBuffer}, \hyperpage{8}
+    \subitem {Zipcode}, \hyperpage{20}
+  \item {PackHeader}
+    \subitem {DelimTextBuffer}, \hyperpage{8}
+  \item {packHeader}
+    \subitem {Proj4\_group5.cpp}, \hyperpage{41}
+  \item {PKIStruct}, \hyperpage{14}
+    \subitem {byteOffset}, \hyperpage{15}
+    \subitem {zipcode}, \hyperpage{15}
+  \item {Placename}
+    \subitem {Zipcode}, \hyperpage{24}
+  \item {Print}
+    \subitem {DelimTextBuffer}, \hyperpage{9}
+    \subitem {Zipcode}, \hyperpage{21}
+  \item {Proj3\_group5.cpp}, \hyperpage{28}
+    \subitem {application}, \hyperpage{29}
+    \subitem {compareStates}, \hyperpage{30}
+    \subitem {constructStateArray}, \hyperpage{31}
+    \subitem {main}, \hyperpage{31}
+    \subitem {outputTable}, \hyperpage{32}
+    \subitem {setZipCodes}, \hyperpage{33}
+  \item {Proj4\_group5.cpp}, \hyperpage{33}
+    \subitem {application}, \hyperpage{35}
+    \subitem {columnOrderArray}, \hyperpage{46}
+    \subitem {compareStates}, \hyperpage{36}
+    \subitem {constructStateArray}, \hyperpage{36}
+    \subitem {generateColumnOrder}, \hyperpage{36}
+    \subitem {generatePKI}, \hyperpage{37}
+    \subitem {generatePKIHeader}, \hyperpage{37}
+    \subitem {headerArray}, \hyperpage{46}
+    \subitem {main}, \hyperpage{37}
+    \subitem {myrandom}, \hyperpage{38}
+    \subitem {outputCSV}, \hyperpage{38}
+    \subitem {outputRandomColumnCSV}, \hyperpage{39}
+    \subitem {outputTable}, \hyperpage{41}
+    \subitem {packHeader}, \hyperpage{41}
+    \subitem {readFileNoHeaderLength}, \hyperpage{42}
+    \subitem {readFileWithHeaderLength}, \hyperpage{43}
+    \subitem {readPKI}, \hyperpage{44}
+    \subitem {searchPKI}, \hyperpage{45}
+    \subitem {setZipCodes}, \hyperpage{46}
+
+  \indexspace
+
+  \item {Rbuffer}
+    \subitem {DelimTextBuffer}, \hyperpage{14}
+  \item {Read}
+    \subitem {DelimTextBuffer}, \hyperpage{9}
+  \item {readFileNoHeaderLength}
+    \subitem {Proj4\_group5.cpp}, \hyperpage{42}
+  \item {readFileWithHeaderLength}
+    \subitem {Proj4\_group5.cpp}, \hyperpage{43}
+  \item {ReadHeader}
+    \subitem {DelimTextBuffer}, \hyperpage{10}
+  \item {readPKI}
+    \subitem {Proj4\_group5.cpp}, \hyperpage{44}
+
+  \indexspace
+
+  \item {searchPKI}
+    \subitem {Proj4\_group5.cpp}, \hyperpage{45}
+  \item {setZipCodes}
+    \subitem {Proj3\_group5.cpp}, \hyperpage{33}
+    \subitem {Proj4\_group5.cpp}, \hyperpage{46}
+  \item {Size}
+    \subitem {Zipcode}, \hyperpage{22}
+  \item {smallestLat}
+    \subitem {State}, \hyperpage{17}
+  \item {smallestLong}
+    \subitem {State}, \hyperpage{17}
+  \item {southernZipcode}
+    \subitem {State}, \hyperpage{17}
+  \item {State}, \hyperpage{15}
+    \subitem {easternZipcode}, \hyperpage{16}
+    \subitem {largestLat}, \hyperpage{16}
+    \subitem {largestLong}, \hyperpage{16}
+    \subitem {northernZipcode}, \hyperpage{16}
+    \subitem {smallestLat}, \hyperpage{17}
+    \subitem {smallestLong}, \hyperpage{17}
+    \subitem {southernZipcode}, \hyperpage{17}
+    \subitem {State}, \hyperpage{16}
+    \subitem {stateName}, \hyperpage{17}
+    \subitem {westernZipcode}, \hyperpage{17}
+    \subitem {Zipcode}, \hyperpage{24}
+  \item {State.h}, \hyperpage{47}
+  \item {stateName}
+    \subitem {State}, \hyperpage{17}
+
+  \indexspace
+
+  \item {TRUE}
+    \subitem {deltext.h}, \hyperpage{27}
+
+  \indexspace
+
+  \item {Unpack}
+    \subitem {DelimTextBuffer}, \hyperpage{11}
+    \subitem {Zipcode}, \hyperpage{22}
+  \item {UnpackHeader}
+    \subitem {DelimTextBuffer}, \hyperpage{11}
+
+  \indexspace
+
+  \item {westernZipcode}
+    \subitem {State}, \hyperpage{17}
+  \item {Write}
+    \subitem {DelimTextBuffer}, \hyperpage{12}
+  \item {WriteHeader}
+    \subitem {DelimTextBuffer}, \hyperpage{12}
+
+  \indexspace
+
+  \item {Zipcode}, \hyperpage{18}
+    \subitem {Clear}, \hyperpage{19}
+    \subitem {Code}, \hyperpage{23}
+    \subitem {County}, \hyperpage{23}
+    \subitem {InitBuffer}, \hyperpage{19}
+    \subitem {Lat}, \hyperpage{23}
+    \subitem {Long}, \hyperpage{24}
+    \subitem {Pack}, \hyperpage{20}
+    \subitem {Placename}, \hyperpage{24}
+    \subitem {Print}, \hyperpage{21}
+    \subitem {Size}, \hyperpage{22}
+    \subitem {State}, \hyperpage{24}
+    \subitem {Unpack}, \hyperpage{22}
+    \subitem {Zipcode}, \hyperpage{19}
+  \item {zipcode}
+    \subitem {PKIStruct}, \hyperpage{15}
+  \item {zipcode.cpp}, \hyperpage{48}
+  \item {zipcode.h}, \hyperpage{50}
+
+\end{theindex}
