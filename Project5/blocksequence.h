@@ -35,7 +35,6 @@ class BlockSequence
             void insert(int index, Zipcode new_record);
 
             void erase(int index);
-
         };
 
     typedef Block * block_pointer;
