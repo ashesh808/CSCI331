@@ -83,6 +83,16 @@ public:
 	 */
 	int Size();
 
+	bool operator!=(const Zipcode &other) const
+	{
+		return (strcmp(Code, other.Code) != 0 ||
+				strcmp(Placename, other.Placename) != 0 ||
+				strcmp(State, other.State) != 0 ||
+				strcmp(County, other.County) != 0 ||
+				strcmp(Lat, other.Lat) != 0 ||
+				strcmp(Long, other.Long) != 0);
+	}
+	
 	Zipcode &operator=(const Zipcode &other)
 	{
 		if (this != &other)
