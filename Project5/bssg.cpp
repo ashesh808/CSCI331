@@ -13,50 +13,41 @@
 #include <fstream>
 #include "blocksequence.h"
 
-//Data about file specifications
-std::string file_name;
-std::string index_file_name;
-int record_count;
-int block_count;
-int field_count;
-int primary_key_field;
-int block_size = 512;
-double min_block_capacity = 0.5;
-
-void menu()
+int main(int argc, char *argv[])
 {
+    std::string data_file;
+    int block_size;
+    std::string header_info;
 
-    // Prompt user for file name
-    std::cout << "Enter the name of the blocked sequence set data file: ";
-    std::cin >> file_name;
-
-    // Prompt user for index file name
-    std::cout << "Enter the name of the index file: ";
-    std::cin >> index_file_name;
-
-    // Prompt user for record count
-    std::cout << "Enter the number of records in the data file: ";
-    std::cin >> record_count;
-
-    // Prompt user for block count
-    block_count = record_count / (block_size * min_block_capacity);
-    if (record_count % static_cast<int>(block_size * min_block_capacity) != 0)
+    // Parse command line arguments
+    for (int i = 1; i < argc; ++i)
     {
-        block_count++;
+        std::string arg = argv[i];
+        if (arg == "--data_file" && i + 1 < argc)
+        {
+            data_file = argv[i + 1];
+        }
+        else if (arg == "--block_size" && i + 1 < argc)
+        {
+            block_size = std::stoi(argv[i + 1]);
+        }
+        else if (arg == "--header_info" && i + 1 < argc)
+        {
+            header_info = argv[i + 1];
+        }
     }
-    std::cout << "Number of blocks in the data file: " << block_count << std::endl;
 
-    // Prompt user for field count
-    std::cout << "Enter the number of fields per record: ";
-    std::cin >> field_count;
+    // Do something with the command line options
+    std::cout << "Data file: " << data_file << std::endl;
+    std::cout << "Block size: " << block_size << std::endl;
+    std::cout << "Header info: " << header_info << std::endl;
 
-    // Prompt user for primary key field
-    std::cout << "Enter the ordinal number of the field that serves as the primary key: ";
-    std::cin >> primary_key_field;
-}
-
-int main()
-{
-    menu();
     return 0;
 }
+
+/**
+ * This program expects three command line options:
+   --data_file: the name of the blocked sequence set data file (a string)
+   --block_size: the size of each block (an integer)
+   --header_info: any other information necessary for the header file (a string)
+   **/
