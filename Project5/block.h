@@ -18,8 +18,10 @@ class Block{
         Block* redistribute(Block otherBlock);
         int getRecordCount();
         void setRecordCount(int new_count);
+        bool isUnderflow();
+        bool isOverflow();
+        bool isEmpty();
         void display();
-
     private:
         int record_count;
 };

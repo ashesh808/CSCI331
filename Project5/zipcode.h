@@ -93,6 +93,11 @@ public:
 				strcmp(Long, other.Long) != 0);
 	}
 	
+	bool operator ==(const Zipcode &other) const
+	{
+		return !(operator!=(other));
+	}
+
 	Zipcode &operator=(const Zipcode &other)
 	{
 		if (this != &other)

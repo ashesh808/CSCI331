@@ -45,12 +45,5 @@ int main()
     std::cout << "new block looks like this \n";
     newBlock->display();
 
-
-    // std::cout << "Erasing a record \n";
-    // testBlock.eraseRecord(two);
-    // testBlock.display();
-
-
-
     return 0;
 }
