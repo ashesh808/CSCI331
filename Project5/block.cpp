@@ -73,13 +73,13 @@ Block *Block::splitBlock(Zipcode newRecord)
     return newblock;
 }
 
-Block *Block::mergeBlock(Block otherBlock)
+void Block::mergeBlock(Block otherBlock)
 {
     for (int i = 0; i < record_count; i++)
     {
         otherBlock.insertRecord(records[i]);
     }
-    clear();  
+    clear();
 }
 
 Block *redistribute(Block otherBlock)

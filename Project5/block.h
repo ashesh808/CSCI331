@@ -14,7 +14,7 @@ class Block{
         void insertRecord(Zipcode new_record);
         void eraseRecord(Zipcode new_record);
         Block* splitBlock(Zipcode new_record);
-        Block* mergeBlock(Block otherBlock);
+        void mergeBlock(Block otherBlock);
         Block* redistribute(Block otherBlock);
         int getRecordCount();
         void setRecordCount(int new_count);
