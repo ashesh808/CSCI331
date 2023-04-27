@@ -117,6 +117,44 @@ int DelimTextBuffer :: Unpack (char * str)
 	return TRUE;
 }
 
+int DelimTextBuffer :: Unpack (int str)
+// extract the value of the next field of the buffer
+{
+	int len = -1; // length of packed string
+	int start = NextByte; // first character to be unpacked
+	if(count!=5){//This has been changed the default was 5, not 6.
+		for(int i = start; i < BufferSize; i++){
+			if (Rbuffer[i] == Delim) 
+				{len = i - start;
+				break;}
+		}//end for
+
+		if (len == -1){ 
+			std::cout <<"len == -1 "<<std::endl; 
+			return FALSE;} // delimeter not found
+
+		NextByte += len + 1;
+
+		if (NextByte > BufferSize){ 
+			std::cout <<"next > bs "<<std::endl;
+			return FALSE;}
+
+		//strncpy (str, &Rbuffer[start], len);
+		str = std::stoi(Rbuffer);
+		//str [len] = 0; // zero termination for string 
+		count++;
+	}else{
+		len = BufferSize-start;
+		NextByte += len;
+		if (NextByte > BufferSize){ std::cout <<"next > bs 5 "<<std::endl; return FALSE;}
+		//strncpy (str, &Rbuffer[start], len);
+		str = std::stoi(Rbuffer);
+		//str [len] = 0; // zero termination for string 		
+		count = 0;
+		}
+	return TRUE;
+}
+
 int DelimTextBuffer :: UnpackHeader (char * str)
 // extract the value of the next field of the buffer
 {

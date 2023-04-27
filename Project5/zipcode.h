@@ -98,6 +98,14 @@ public:
 		return !(operator!=(other));
 	}
 
+	bool operator <(const Zipcode&rhs) const{
+		return(std::stoi(this->Code)<std::stoi(rhs.Code));
+	}
+
+	bool operator >(const Zipcode&rhs) const{
+		return(std::stoi(this->Code)>std::stoi(rhs.Code));
+	}
+
 	Zipcode &operator=(const Zipcode &other)
 	{
 		if (this != &other)
@@ -112,7 +120,8 @@ public:
 		}
 		return *this;
 	}
+	
+	
 };
-
 #include "zipcode.cpp"
 #endif

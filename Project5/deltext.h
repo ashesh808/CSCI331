@@ -7,6 +7,8 @@
 /*provides use of c++ strings*/
 #include <string>
 
+#include <cstring>
+
 #ifndef FALSE
 #define FALSE (0)
 #define TRUE (1)
@@ -64,6 +66,8 @@ public:
 	 * @post a c style string is unpacked into the buffer
 	 */
 	int Unpack(char *);
+
+	int Unpack(int);
 
 	/** PackHeader
 	Packs the header data into a character buffer.

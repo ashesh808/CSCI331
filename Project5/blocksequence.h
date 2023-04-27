@@ -12,10 +12,12 @@ public:
     int size();
     void insert(Block target_block);
     void erase(Block new_block);
-    ~BlockSequence();
-
+    void dumpPhysical();
+    void dumpLogical();
 private:
     std::vector<Block> BlockSequenceVector;
+    std::vector<Block> available_blocks;
 };
 
+#include "blocksequence.cpp"
 #endif

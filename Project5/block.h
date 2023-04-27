@@ -10,6 +10,7 @@ class Block
 {
 public:
     Zipcode records[5];
+    int block_id;
     void clear();
     Block();
     void insertRecord(Zipcode new_record);
@@ -23,16 +24,44 @@ public:
     bool isOverflow();
     bool isEmpty();
     void display();
+    Zipcode getFrontRecord() const;
+    Zipcode getBackRecord() const;
+    int Unpack(DelimTextBuffer &);
+    int Pack(DelimTextBuffer &) const;
 
     // Less-than comparison operator
     bool operator<(const Block &other) const
     {
         // If record counts are equal, compare the first record
-        if (std::stoi(records[0].Code) < std::stoi(other.records[0].Code)) {
+        if (std::stoi(records[0].Code) < std::stoi(other.records[0].Code))
+        {
             return true;
-        } else {
+        }
+        else
+        {
             return false;
         }
+    }
+    // Assignment operator
+    Block &operator=(const Block &other)
+    {
+        // Check for self-assignment
+        if (this == &other)
+        {
+            return *this;
+        }
+
+        // Copy the records
+        for (int i = 0; i < 5; i++)
+        {
+            records[i] = other.records[i];
+        }
+
+        // Copy the block ID and record count
+        block_id = other.block_id;
+        record_count = other.record_count;
+
+        return *this;
     }
 
 private:

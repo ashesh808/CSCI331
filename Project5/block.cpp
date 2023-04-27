@@ -13,6 +13,7 @@ Block::Block()
 // pre: record count less than 5
 void Block::insertRecord(Zipcode new_record)
 {
+    //std::cout << " insert";
     int i = record_count - 1;
     while (i >= 0 && std::stoi(records[i].Code) > std::stoi(new_record.Code))
     {
@@ -26,6 +27,7 @@ void Block::insertRecord(Zipcode new_record)
 // pre: record count less than 5
 void Block::display()
 {
+    std::cout << "Block ID " << block_id << ": "<< std::endl;
     for (int i = 0; i < record_count; i++)
     {
         std::cout << records[i].Code << "\n";
@@ -65,11 +67,10 @@ Block *Block::splitBlock(Zipcode newRecord)
     Zipcode thirdLastRecord = records[2];
     newblock->insertRecord(lastRecord);
     newblock->insertRecord(secondLastRecord);
-    newblock->insertRecord(thirdLastRecord);
     eraseRecord(lastRecord);
     eraseRecord(secondLastRecord);
-    eraseRecord(thirdLastRecord);
-    insertRecord(newRecord);
+    newblock->insertRecord(newRecord);
+    std::cout << "Split block event \n";
     return newblock;
 }
 
@@ -111,4 +112,35 @@ bool Block::isOverflow()
 bool Block::isEmpty()
 {
     return (record_count == 0);
+}
+
+Zipcode Block::getFrontRecord() const{
+    return records[0];
+}
+
+Zipcode Block::getBackRecord () const {
+    return records[record_count-1];
+}
+
+int Block::Pack(DelimTextBuffer& Buffer)const{
+    int result;
+    Buffer.Clear();
+    result = Buffer.Pack((std::to_string(block_id)).c_str());
+    for(int i = 0; i < record_count; i++){
+        result = Buffer.Pack(records[i].Code);
+    }
+
+    return result;
+}
+
+int Block::Unpack(DelimTextBuffer & Buffer){
+    int result;
+    result = Buffer.Unpack(block_id);
+    int i = 0;
+    result = result && Buffer.Unpack(records[0].Code);
+    result = result && Buffer.Unpack(records[1].Code);
+    result = result && Buffer.Unpack(records[2].Code);
+    result = result && Buffer.Unpack(records[3].Code);
+    result = result && Buffer.Unpack(records[4].Code);
+
 }
